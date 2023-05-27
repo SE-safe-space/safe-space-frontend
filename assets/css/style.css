@@ -194,3 +194,7 @@ a{
         display: flex;
     }
 }
+
+@import 'screens/signup-form.css';
+@import 'screens/login-form.css';
+
