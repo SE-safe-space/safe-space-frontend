@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/screens/login-form.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -51,8 +52,21 @@
         </a>
       </nav>
     </div>
-    <div class="signup__">
-      회원가입
-    </div>
+    <section class="contents__wrap">
+      <form action="index.html" method="get" class="login-form">
+        <div class="login__header">회원가입</div>
+        <div>이름</div>
+        <input name="username" required type="text" placeholder="" />
+        <div>생년월일(ex: 000321)</div>
+        <input name="username" required type="text" placeholder="" />
+        <div>성별</div>
+        <input name="username" required type="text" placeholder="" />
+        <div>아이디</div>
+        <input name="username" required type="text" placeholder="" />
+        <div>비밀번호</div>
+        <input name="password" required type="password" placeholder="" />
+        <input type="submit" value="회원가입" />
+      </form>
+    </section>
   </body>
 </html>
