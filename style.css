@@ -85,9 +85,23 @@ a{
     color: rgb(216, 170, 20);
 }
 
-.content img {
-    display: flexbox;
+.backimg {
+    display: flex;
 }
+.contents {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 10% 0% 10%;   
+ 
+    width: auto;
+    flex-wrap: wrap;
+}
+
+
+
 
 @media screen and (max-width: 768px) {
     .navbar {
