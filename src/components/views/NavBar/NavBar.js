@@ -21,7 +21,6 @@ function NavBar() {
           <div class="navbar__logo">
             <i class="fa-solid fa-person-breastfeeding"></i>
             <Link to="/">Safe Space</Link>
-            <a href="index.html">Safe Space</a>
           </div>
 
           <div class="navbar__menu">
