@@ -1,21 +1,24 @@
-import React from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Reset } from 'styled-reset'
+import LandingPage from './components/views/LandingPage/LandingPage'
+import RegisterPage from './components/views/RegisterPage/RegisterPage'
+import BoardList from './components/views/BoardList/BoardList'
+import BoardWrite from './components/views/BoardWrite/BoardWrite'
+import BoardDetail from './components/views/BoardDetail/BoardDetail'
+import Login from './components/views/Login/Login'
+import Logout from './components/views/Logout/Logout'
+import { createGlobalStyle } from 'styled-components'
 
-import LandingPage from './components/views/LandingPage/LandingPage';
-import RegisterPage from './components/views/RegisterPage/RegisterPage';
-import BoardList from './components/views/BoardList/BoardList';
-import BoardWrite from './components/views/BoardWrite/BoardWrite';
-import BoardDetail from './components/views/BoardDetail/BoardDetail';
-import Login from './components/views/Login/Login';
-import Logout from './components/views/Logout/Logout';
-
+const GlobalStyle = createGlobalStyle`
+  ${reset}
+  /* other styles */
+`
 function App() {
   return (
-    <BrowserRouter>
+    <>
+      <GlobalStyle />
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/RegisterPage" element={<RegisterPage />} />
@@ -26,7 +29,8 @@ function App() {
           <Route path="/logout" element={<Logout />} />
         </Routes>
       </BrowserRouter>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App
