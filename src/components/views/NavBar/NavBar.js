@@ -1,5 +1,6 @@
 import React from 'react'
-
+import '../NavBar/NavBar.css'
+import { Link } from 'react-router-dom'
 function NavBar() {
   return (
     <>
@@ -7,11 +8,11 @@ function NavBar() {
         <nav class="login">
           <div class="navbar__login">
             <li>
-              <a href="./login.html">로그인</a>
+              <Link to="/loginPage">로그인</Link>
             </li>
             <p>|</p>
             <li>
-              <a href="./signup.html">회원가입</a>
+              <Link to="/signUpPage">회원가입</Link>
             </li>
           </div>
         </nav>
@@ -19,24 +20,25 @@ function NavBar() {
         <nav class="navbar">
           <div class="navbar__logo">
             <i class="fa-solid fa-person-breastfeeding"></i>
+            <Link to="/">Safe Space</Link>
             <a href="index.html">Safe Space</a>
           </div>
 
           <div class="navbar__menu">
             <li>
-              <a href="index.html">홈</a>
+              <Link to="/">홈</Link>
             </li>
             <li>
-              <a href="commu.html">커뮤니티</a>
+              <Link to="/">커뮤니티</Link>
             </li>
             <li>
-              <a href="chal.html">챌린지</a>
+              <Link to="/">챌린지</Link>
             </li>
             <li>
-              <a href="couns.html">상담사</a>
+              <Link to="/">상담사</Link>
             </li>
             <li>
-              <a href="">기타</a>
+              <Link to="/">기타</Link>
             </li>
           </div>
           <div class="navbar__blank"></div>
