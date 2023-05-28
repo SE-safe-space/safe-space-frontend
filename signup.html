@@ -55,16 +55,41 @@
     <section class="contents__wrap">
       <form action="index.html" method="get" class="signup-form">
         <div class="signup__header">회원가입</div>
+        <div>이메일</div>
+        <input name="email" required type="text" placeholder="" />
         <div>이름</div>
-        <input name="username" required type="text" placeholder="" />
-        <div>생년월일(ex: 000321)</div>
-        <input name="username" required type="text" placeholder="" />
-        <div>성별</div>
-        <input name="username" required type="text" placeholder="" />
+        <input name="name" required type="text" placeholder="" />
         <div>아이디</div>
         <input name="username" required type="text" placeholder="" />
         <div>비밀번호</div>
         <input name="password" required type="password" placeholder="" />
+        <div>비밀번호 확인</div>
+        <input name="confirmpassword" required type="password" placeholder="" />
+
+        <div>생년월일</div>
+        <input
+          type="date"
+          max="2012-12-31"
+          min="1930-01-01"
+          value="2000-01-01"
+        />
+        <select name="job">
+          <option value="">성별 선택</option>
+          <option value="남">남</option>
+          <option value="여">여</option>
+        </select>
+
+        <!-- <div>성별</div> -->
+        <!-- <label class="singup__checkbox">
+          남성
+          <input type="checkbox" name="sex" value="man" />
+        </label>
+        <label class="singup__checkbox">
+          여성
+          <input type="checkbox" name="sex" value="woman" />
+        </label> -->
+        <div>연락처</div>
+        <input name="phonenumber" required type="text" placeholder="" />
         <input type="submit" value="회원가입" />
       </form>
     </section>
