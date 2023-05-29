@@ -10,6 +10,9 @@ import { createGlobalStyle } from 'styled-components'
 import MainPage from './page/MainPage'
 import LoginPage from './page/LoginPage'
 import SignUpPage from './page/SignUpPage'
+import BoardPage from './page/BoardPage'
+import CounselorPage from './page/CounselorPage'
+
 const GlobalStyle = createGlobalStyle`
 html,
 body,
@@ -160,11 +163,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/signUpPage" element={<SignUpPage />} />
-          <Route path="/board/worry" element={<BoardList />} />
+          <Route path="/signUp" element={<SignUpPage />} />
+          <Route path="/counselor" element={<CounselorPage />} />
+          <Route path="/board/worry" element={<BoardPage />} />
           <Route path="/board/worry/:id" element={<BoardDetail />} />
           <Route path="/BoardWrite" element={<BoardWrite />} />
-          <Route path="/loginPage" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/logout" element={<Logout />} />
         </Routes>
       </BrowserRouter>

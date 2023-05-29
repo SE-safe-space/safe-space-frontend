@@ -8,11 +8,11 @@ function NavBar() {
         <nav class="login">
           <div class="navbar__login">
             <li>
-              <Link to="/loginPage">로그인</Link>
+              <Link to="/login">로그인</Link>
             </li>
             <p>|</p>
             <li>
-              <Link to="/signUpPage">회원가입</Link>
+              <Link to="/signUp">회원가입</Link>
             </li>
           </div>
         </nav>
@@ -28,13 +28,13 @@ function NavBar() {
               <Link to="/">홈</Link>
             </li>
             <li>
-              <Link to="/">커뮤니티</Link>
+              <Link to="/board">커뮤니티</Link>
             </li>
             <li>
               <Link to="/">챌린지</Link>
             </li>
             <li>
-              <Link to="/">상담사</Link>
+              <Link to="/counselor">상담사</Link>
             </li>
             <li>
               <Link to="/">기타</Link>
