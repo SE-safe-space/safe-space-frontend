@@ -28,7 +28,7 @@ function NavBar() {
               <Link to="/">홈</Link>
             </li>
             <li>
-              <Link to="/board">커뮤니티</Link>
+              <Link to="/board/worry">커뮤니티</Link>
             </li>
             <li>
               <Link to="/">챌린지</Link>
