@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
+import './App.css'
 import BoardList from './components/views/BoardList/BoardList'
 import BoardWrite from './components/views/BoardWrite/BoardWrite'
 import BoardDetail from './components/views/BoardDetail/BoardDetail'
@@ -118,6 +118,7 @@ section {
 }
 body {
   line-height: 1;
+  font-family: "NotoSansKR-Medium";
 }
 ol,
 ul {
