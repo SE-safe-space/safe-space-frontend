@@ -26,6 +26,8 @@
   align-items: center;
   background-color: #5cf0b294;
   padding: 8px 12px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .navbar__logo {

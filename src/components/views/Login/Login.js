@@ -49,7 +49,10 @@ function Login() {
     <div className="content">
       <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
-          <form className="mt-8 space-y-6" onSubmit={handleSubmit(onValid)}>
+          <form
+            className="mt-8 space-y-6 login-form"
+            onSubmit={handleSubmit(onValid)}
+          >
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
