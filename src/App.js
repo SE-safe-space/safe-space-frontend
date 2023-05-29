@@ -166,7 +166,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/signUp" element={<SignUpPage />} />
           <Route path="/counselor" element={<CounselorPage />} />
-          <Route path="/board/worry" element={<BoardPage />} />
+          <Route path="/board/worry" element={<BoardList />} />
           <Route path="/board/worry/:id" element={<BoardDetail />} />
           <Route path="/BoardWrite" element={<BoardWrite />} />
           <Route path="/login" element={<LoginPage />} />
