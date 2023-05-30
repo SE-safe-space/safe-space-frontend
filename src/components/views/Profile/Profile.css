@@ -1,11 +1,12 @@
 .profile {
   display: flex;
   width: 70%;
-  padding: 40px 16px;
+  padding: 5px 16px;
   margin: 0 auto;
   font-size: 14px;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .profile__privacy {
@@ -68,6 +69,20 @@
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 20px;
 }
-.profile__safespace li {
+.profile li {
   padding: 15px 0px;
+}
+
+.profile__reservation {
+  min-height: 100%;
+  width: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #444;
+
+  top: 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }

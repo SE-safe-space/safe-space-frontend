@@ -28,6 +28,12 @@ function Profile() {
             <li>상담방 링크2</li>
           </ul>
         </div>
+        <div className="profile__reservation">
+          <h1>예약 정보</h1>
+          <ul>
+            <li>예약 리스트</li>
+          </ul>
+        </div>
       </div>
     </>
   )
