@@ -13,6 +13,7 @@ function Profile() {
           <h1>프로필</h1>
           <img className="profile__img" alt="profile_img" src="" />
           <button formAction="">사진 수정</button>
+          {/* 프론트 로직 추가 필요 */}
           <span>이메일:</span>
           <span>이름:</span>
           <span>별명:</span>

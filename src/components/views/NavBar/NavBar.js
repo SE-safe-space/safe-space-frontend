@@ -1,6 +1,8 @@
 import React from 'react'
 import '../NavBar/NavBar.css'
 import { Link } from 'react-router-dom'
+import { FiUser } from 'react-icons/fi'
+
 function NavBar() {
   return (
     <>
@@ -39,9 +41,13 @@ function NavBar() {
             <li>
               <Link to="/">기타</Link>
             </li>
+            <li>
+              <Link to="/profile/id">
+                <FiUser />
+              </Link>
+            </li>
           </div>
           <div class="navbar__blank"></div>
-
           <a href="javascript:void(0);" class="navbar__toggleBtn">
             <i class="fa-solid fa-bars"></i>
           </a>
