@@ -9,10 +9,10 @@ const BoardWrite = () => {
     title: '',
     writer: '',
     type: '',
-    content: '',
+    text: '',
   });
 
-  const { title, writer, type, content } = board; //비구조화 할당
+  const { title, writer, type, text } = board; //비구조화 할당
 
   const onChange = (event) => {
     const { value, name } = event.target; //event.target에서 name과 value만 가져오기
@@ -63,7 +63,7 @@ const BoardWrite = () => {
       <div>
         <span>내용</span>
         <textarea
-          name="content"
+          name="text"
           cols="30"
           rows="10"
           value={content}

@@ -10,7 +10,6 @@ import { createGlobalStyle } from 'styled-components'
 import MainPage from './page/MainPage'
 import LoginPage from './page/LoginPage'
 import SignUpPage from './page/SignUpPage'
-import BoardPage from './page/BoardPage'
 import CounselorPage from './page/CounselorPage'
 
 const GlobalStyle = createGlobalStyle`

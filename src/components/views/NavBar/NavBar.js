@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 function NavBar() {
   return (
     <>
-      <div class="nav__wrap">
-        <nav class="login">
-          <div class="navbar__login">
+      <div className="nav__wrap">
+        <nav className="login">
+          <div className="navbar__login">
             <li>
               <Link to="/login">로그인</Link>
             </li>
@@ -17,13 +17,13 @@ function NavBar() {
           </div>
         </nav>
 
-        <nav class="navbar">
-          <div class="navbar__logo">
-            <i class="fa-solid fa-person-breastfeeding"></i>
+        <nav className="navbar">
+          <div className="navbar__logo">
+            <i className="fa-solid fa-person-breastfeeding"></i>
             <Link to="/">Safe Space</Link>
           </div>
 
-          <div class="navbar__menu">
+          <div className="navbar__menu">
             <li>
               <Link to="/">홈</Link>
             </li>
@@ -40,11 +40,11 @@ function NavBar() {
               <Link to="/">기타</Link>
             </li>
           </div>
-          <div class="navbar__blank"></div>
+          <div className="navbar__blank"></div>
 
-          <a href="javascript:void(0);" class="navbar__toggleBtn">
-            <i class="fa-solid fa-bars"></i>
-          </a>
+          <Link to="javascript:void(0);" className="navbar__toggleBtn">
+            <i className="fa-solid fa-bars"></i>
+          </Link>
         </nav>
       </div>
     </>

@@ -1,12 +1,12 @@
 import React from 'react'
-import RegisterPage from '../components/views/RegisterPage/RegisterPage'
+import SignUp from '../components/views/SignUp/SignUp'
 import NavBar from '../components/views/NavBar/NavBar'
 
 function SignUpPage() {
   return (
     <>
       <NavBar />
-      <RegisterPage />
+      <SignUp />
     </>
   )
 }
