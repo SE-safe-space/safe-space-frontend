@@ -9,8 +9,10 @@ import Logout from './components/views/Logout/Logout'
 import MainPage from './page/MainPage'
 import LoginPage from './page/LoginPage'
 import SignUpPage from './page/SignUpPage'
-import BoardPage from './page/BoardPage'
+// import BoardPage from './page/BoardPage'
 import CounselorPage from './page/CounselorPage'
+import ProfilePage from './page/ProfilePage'
+
 import GlobalStyle from './page/GlobalStyle'
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/signUp" element={<SignUpPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/counselor" element={<CounselorPage />} />
           <Route path="/board/worry" element={<BoardList />} />
           <Route path="/board/worry/:id" element={<BoardDetail />} />
