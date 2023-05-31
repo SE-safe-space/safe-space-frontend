@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const Board = ({ id, title, content, writer }) => {
+const Board = ({ id, title, text, writer }) => {
   const navigate = useNavigate()
 
   const moveToUpdate = () => {
@@ -28,7 +28,7 @@ const Board = ({ id, title, content, writer }) => {
         <h2>{title}</h2>
         <h5>{writer}</h5>
         <hr />
-        <p>{content}</p>
+        <p>{text}</p>
       </div>
       <div>
         <button onClick={moveToUpdate}>수정</button>

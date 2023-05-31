@@ -1,3 +1,4 @@
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
@@ -56,16 +57,16 @@ function Login() {
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
-                <label htmlFor="UserID" className="sr-only">
-                  User ID
+                <label htmlFor="UserEmail" className="sr-only">
+                  User Email
                 </label>
                 <Input
-                  {...register('userid', { required: 'Please Enter Your ID' })}
+                  {...register('useremail', { required: 'Please Enter Your ID' })}
                   type="text"
-                  placeholder="User ID"
+                  placeholder="User Email"
                 />
                 <ErrorMessage
-                  name="userid"
+                  name="useremail"
                   errors={errors}
                   render={({ message }) => (
                     <p className="text-sm font-medium text-rose-500">
@@ -82,7 +83,7 @@ function Login() {
                   {...register('password', {
                     required: 'Please Enter Your Password',
                   })}
-                  type="text"
+                  type="password"
                   placeholder="Password"
                 />
                 <ErrorMessage

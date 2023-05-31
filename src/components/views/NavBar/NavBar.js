@@ -9,6 +9,9 @@ function NavBar() {
       <div className="nav__wrap">
         <nav className="login">
           <div className="navbar__login">
+      <div className="nav__wrap">
+        <nav className="login">
+          <div className="navbar__login">
             <li>
               <Link to="/login">로그인</Link>
             </li>
@@ -21,8 +24,7 @@ function NavBar() {
 
         <nav className="navbar">
           <div className="navbar__logo">
-            {/* <i className="fa-solid fa-person-breastfeeding"></i> */}
-            <IoLogoGithub />
+            <i className="fa-solid fa-person-breastfeeding"></i>
             <Link to="/">Safe Space</Link>
           </div>
 
@@ -49,9 +51,10 @@ function NavBar() {
             </li>
           </div>
           <div className="navbar__blank"></div>
-          <a href="javascript:void(0);" className="navbar__toggleBtn">
+
+          <Link to="javascript:void(0);" className="navbar__toggleBtn">
             <i className="fa-solid fa-bars"></i>
-          </a>
+          </Link>
         </nav>
       </div>
     </>
