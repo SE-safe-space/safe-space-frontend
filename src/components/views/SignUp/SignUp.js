@@ -51,7 +51,7 @@ function SignUp(props) {
         dispatch(registerUser(body))
         .then(response => {
             if(response.payload.success){
-                props.history.push('/login')
+                props.history.push('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/auth/signup')
             } else {
                 alert('Error')
             }
