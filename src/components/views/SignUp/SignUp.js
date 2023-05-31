@@ -1,61 +1,60 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { registerUser } from '../../../_actions/user_action';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { registerUser } from '../../../_actions/user_action'
+import '../SignUp/SignUp.css'
 
 function SignUp(props) {
+  const dispatch = useDispatch()
 
-    const dispatch = useDispatch();
+  const [Email, setEmail] = useState('')
+  const [Password, setPassword] = useState('')
+  const [ConfirmPassword, setConfirmPassword] = useState('')
+  const [Name, setName] = useState('')
+  const [Sex, setSex] = useState('')
+  const [PhoneNumber, setPhoneNumber] = useState('')
 
-    const [Email, setEmail] = useState("");
-    const [Password, setPassword] = useState("");
-    const [ConfirmPassword, setConfirmPassword] = useState("");
-    const [Name, setName] = useState("");
-    const [Sex, setSex] = useState("");
-    const [PhoneNumber, setPhoneNumber] = useState("");
+  const onEmailHandler = (event) => {
+    setEmail(event.currentTarget.value)
+  }
+  const onPasswordHandler = (event) => {
+    setPassword(event.currentTarget.value)
+  }
+  const onConfirmPasswordHandler = (event) => {
+    setConfirmPassword(event.currentTarget.value)
+  }
+  const onNameHandler = (event) => {
+    setName(event.currentTarget.value)
+  }
+  const onSexHandler = (event) => {
+    setSex(parseInt(event.currentTarget.value))
+  }
+  const onPhoneNumberHandler = (event) => {
+    setPhoneNumber(event.currentTarget.value)
+  }
+  const onSubmitHandler = (event) => {
+    event.preventDefault()
 
+    let body = {
+      email: Email,
+      type: 'MEMBER',
+      password: Password,
+      name: Name,
+      sex: Sex,
+      phoneNumber: PhoneNumber,
+    }
+    console.log(body)
 
-    const onEmailHandler = (event) => {
-        setEmail(event.currentTarget.value);
-    }
-    const onPasswordHandler = (event) => {
-        setPassword(event.currentTarget.value);
-    }
-    const onConfirmPasswordHandler = (event) => {
-        setConfirmPassword(event.currentTarget.value);
-    }
-    const onNameHandler = (event) => {
-        setName(event.currentTarget.value);
-    }
-    const onSexHandler = (event) => {
-      setSex(parseInt(event.currentTarget.value));
-    }
-    const onPhoneNumberHandler = (event) => {
-      setPhoneNumber(event.currentTarget.value);
-    }
-    const onSubmitHandler = (event) => {
-        event.preventDefault();
-
-        let body = {
-            email: Email,
-            type : "MEMBER",
-            password: Password,
-            name: Name,
-            sex: Sex,
-            phoneNumber: PhoneNumber,
-        }
-        console.log(body);
-
-        dispatch(registerUser(body))
-        .then(response => {
-            if(response.payload.success){
-                props.history.push('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/auth/signup')
-            } else {
-                alert('Error')
-            }
-        })
-        console.log(body);
-
-    }
+    dispatch(registerUser(body)).then((response) => {
+      if (response.payload.success) {
+        props.history.push(
+          'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/auth/signup',
+        )
+      } else {
+        alert('Error')
+      }
+    })
+    console.log(body)
+  }
 
   return (
     <div
@@ -82,8 +81,8 @@ function SignUp(props) {
         <label>성별</label>
         <select name="job" onChange={onSexHandler}>
           <option value="">성별 선택</option>
-          <option value= "1">남</option>
-          <option value= "2">여</option>
+          <option value="1">남</option>
+          <option value="2">여</option>
         </select>
         <label>연락처</label>
         <input type="tel" value={PhoneNumber} onChange={onPhoneNumberHandler} />
@@ -94,4 +93,4 @@ function SignUp(props) {
   )
 }
 
-export default SignUp;
+export default SignUp
