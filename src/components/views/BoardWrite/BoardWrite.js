@@ -66,7 +66,7 @@ const BoardWrite = () => {
           name="text"
           cols="30"
           rows="10"
-          value={content}
+          value={text}
           onChange={onChange}
         ></textarea>
       </div>
