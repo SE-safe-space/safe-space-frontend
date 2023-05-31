@@ -30,13 +30,13 @@ function Login() {
 
   // submit 이후 동작할 코드
   // 백으로 유저 정보 전달
-  const onValid = async ({ userid, password }) => {
-    const response = await loginUser({ userid, password })
+  const onValid = async ({ email, password }) => {
+    const response = await loginUser({ email, password })
 
     if (response.status) {
       // 쿠키에 Refresh Token, store에 Access Token 저장
-      setRefreshToken(response.json.refresh_token)
-      dispatch(SET_TOKEN(response.json.access_token))
+      setRefreshToken(response.json.refreshToken)
+      dispatch(SET_TOKEN(response.json.accessToken))
 
       return navigate('/')
     } else {
@@ -57,16 +57,16 @@ function Login() {
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
-                <label htmlFor="UserID" className="sr-only">
-                  User ID
+                <label htmlFor="Email" className="sr-only">
+                  Email
                 </label>
                 <Input
-                  {...register('userid', { required: 'Please Enter Your ID' })}
+                  {...register('email', { required: 'Please Enter Your Email' })}
                   type="text"
-                  placeholder="User ID"
+                  placeholder="Email"
                 />
                 <ErrorMessage
-                  name="userid"
+                  name="email"
                   errors={errors}
                   render={({ message }) => (
                     <p className="text-sm font-medium text-rose-500">
@@ -83,11 +83,11 @@ function Login() {
                   {...register('password', {
                     required: 'Please Enter Your Password',
                   })}
-                  type="text"
+                  type="password"
                   placeholder="Password"
                 />
                 <ErrorMessage
-                  name="userid"
+                  name="email"
                   errors={errors}
                   render={({ message }) => (
                     <p className="text-sm font-medium text-rose-500">
