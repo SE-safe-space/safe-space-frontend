@@ -31,7 +31,7 @@ export const loginUser = async (credentials) => {
         body: JSON.stringify(credentials)
     };
 
-    const data = await getPromise('/user/login', option).catch(() => {
+    const data = await getPromise('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/auth/login', option).catch(() => {
         return statusError;
     });
 
@@ -89,7 +89,7 @@ export const requestToken = async (refreshToken) => {
         body: JSON.stringify({ refresh_token: refreshToken })
     }
 
-    const data = await getPromise('/user/login', option).catch(() => {
+    const data = await getPromise('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/auth/login', option).catch(() => {
         return statusError;
     });
 

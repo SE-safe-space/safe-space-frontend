@@ -8,7 +8,6 @@ function SignUp(props) {
 
   const [Email, setEmail] = useState('')
   const [Password, setPassword] = useState('')
-  const [ConfirmPassword, setConfirmPassword] = useState('')
   const [Name, setName] = useState('')
   const [Sex, setSex] = useState('')
   const [PhoneNumber, setPhoneNumber] = useState('')
@@ -18,9 +17,6 @@ function SignUp(props) {
   }
   const onPasswordHandler = (event) => {
     setPassword(event.currentTarget.value)
-  }
-  const onConfirmPasswordHandler = (event) => {
-    setConfirmPassword(event.currentTarget.value)
   }
   const onNameHandler = (event) => {
     setName(event.currentTarget.value)
@@ -53,7 +49,6 @@ function SignUp(props) {
         alert('Error')
       }
     })
-    console.log(body)
   }
 
   return (

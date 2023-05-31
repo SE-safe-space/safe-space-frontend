@@ -1,11 +1,58 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { getCookieToken } from '../../../storage/Cookie'
+import { useSelector, useDispatch } from 'react-redux'
+import { SET_TOKEN } from '../store/Auth';
+
 import '../Profile/Profile.css'
 
-const handleOpenNewTab = (url) => {
-  window.open(url, '_blank', 'noopener, noreferrer, width=400, height=500')
-}
+const Profile = () => {
 
-function Profile() {
+  const dispatch = useDispatch();
+    const [user, setUser] = useState(null);
+    const { accessToken } = useSelector(state => state.token);
+  
+    useEffect(() => {
+      const FetchUserInfo = async () => {
+        try {
+          const response = await axios.get('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me', {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          });
+  
+          setUser(response.data);
+        } catch (error) {
+          if (error.response && error.response.status === 401) {
+            const refreshToken = getCookieToken('refreshToken'); 
+  
+            try {
+              const refreshResponse = await axios.post('https://example.com/api/refresh', {
+                refreshToken,
+              });
+
+              const newAccessToken = refreshResponse.data.accessToken;
+              dispatch(SET_TOKEN(newAccessToken));
+  
+              const retryResponse = await axios.get('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me', {
+                headers: {
+                  Authorization: `Bearer ${newAccessToken}`,
+                },
+              });
+  
+              setUser(retryResponse.data);
+            } catch (refreshError) {
+              console.error('Error refreshing access token:', refreshError);
+            }
+          } else {
+            console.error('Error fetching user information:', error);
+          }
+        }
+      };
+  
+      FetchUserInfo();
+    }, []);
+
   return (
     <>
       <div className="content profile__header">
@@ -18,12 +65,11 @@ function Profile() {
           <img className="profile__img" alt="profile_img" src="" />
           <button formAction="">사진 수정</button>
           {/* 프론트 로직 추가 필요 */}
-          <span>이메일:</span>
+          <span>이메일:{user.email}</span>
           <span>이름:</span>
           <span>별명:</span>
           <span>성별:</span>
           <span>연락처:</span>
-          <span>생년월일:</span>
           <button formAction="">비밀번호 수정</button>
         </div>
         <div className="profile__safespace">
