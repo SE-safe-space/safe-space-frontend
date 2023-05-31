@@ -2,7 +2,7 @@ import React from 'react'
 import '../NavBar/NavBar.css'
 import { Link } from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
-
+import { IoLogoGithub } from 'react-icons/io'
 function NavBar() {
   return (
     <>
@@ -21,7 +21,8 @@ function NavBar() {
 
         <nav className="navbar">
           <div className="navbar__logo">
-            <i className="fa-solid fa-person-breastfeeding"></i>
+            {/* <i className="fa-solid fa-person-breastfeeding"></i> */}
+            <IoLogoGithub />
             <Link to="/">Safe Space</Link>
           </div>
 
@@ -32,18 +33,18 @@ function NavBar() {
             <li>
               <Link to="/board/worry">커뮤니티</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/">챌린지</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/counselor">상담사</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/">기타</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/profile/id">
-                <FiUser />
+                <FiUser /> 프로필
               </Link>
             </li>
           </div>
