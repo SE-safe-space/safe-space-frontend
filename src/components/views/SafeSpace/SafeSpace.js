@@ -22,6 +22,25 @@ function SafeSpace() {
               </div>
             </div>
           </article>
+          <article class="msg-container msg-self" id="msg-0">
+            <div class="msg-box">
+              <div class="flr">
+                <div class="messages">
+                  <p class="msg" id="msg-1">
+                    Lorem ipsum dolor sit amet
+                  </p>
+                  <p class="msg" id="msg-2">
+                    Praesent varius
+                  </p>
+                </div>
+                <span class="timestamp">
+                  <span class="username">Name</span>&bull;
+                  <span class="posttime">2 minutes ago</span>
+                </span>
+              </div>
+              <img class="user-img" id="user-0" alt="user-img" />
+            </div>
+          </article>
         </section>
         <form class="chat-input" onsubmit="return false;">
           <input type="text" autocomplete="on" placeholder="Type a message" />
