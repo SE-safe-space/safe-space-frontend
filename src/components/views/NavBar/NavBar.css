@@ -5,7 +5,7 @@
   list-style: none;
   font-size: 13px;
   padding-left: 0;
-  justify-content: end;
+  justify-content: flex-end;
   margin: auto 30px auto auto;
   background-color: #fff;
 }
@@ -72,6 +72,7 @@
 .navbar__toggleBtn {
   display: none;
   position: absolute;
+  z-index: 3;
   right: 32px;
   font-size: 24px;
   color: rgb(216, 170, 20);

@@ -27,7 +27,7 @@ function SignUp(props) {
         setName(event.currentTarget.value);
     }
     const onSexHandler = (event) => {
-      setSex(event.currentTarget.value);
+      setSex(parseInt(event.currentTarget.value));
     }
     const onPhoneNumberHandler = (event) => {
       setPhoneNumber(event.currentTarget.value);
@@ -35,18 +35,15 @@ function SignUp(props) {
     const onSubmitHandler = (event) => {
         event.preventDefault();
 
-        if(Password !== ConfirmPassword){
-            return alert('비밀번호와 비밀번호 확인이 같지 않습니다.')
-        }
-
         let body = {
             email: Email,
+            type : "MEMBER",
             password: Password,
-            confirmPassword: ConfirmPassword,
             name: Name,
             sex: Sex,
-            PhoneNumber: PhoneNumber,
+            phoneNumber: PhoneNumber,
         }
+        console.log(body);
 
         dispatch(registerUser(body))
         .then(response => {
@@ -56,6 +53,8 @@ function SignUp(props) {
                 alert('Error')
             }
         })
+        console.log(body);
+
     }
 
   return (
@@ -78,19 +77,13 @@ function SignUp(props) {
         <input type="email" value={Email} onChange={onEmailHandler} />
         <label>비밀번호</label>
         <input type="password" value={Password} onChange={onPasswordHandler} />
-        <label>비밀번호 확인</label>
-        <input
-          type="password"
-          value={ConfirmPassword}
-          onChange={onConfirmPasswordHandler}
-        />
         <label>이름</label>
         <input type="text" value={Name} onChange={onNameHandler} />
         <label>성별</label>
         <select name="job" onChange={onSexHandler}>
           <option value="">성별 선택</option>
-          <option value="남">남</option>
-          <option value="여">여</option>
+          <option value= "1">남</option>
+          <option value= "2">여</option>
         </select>
         <label>연락처</label>
         <input type="tel" value={PhoneNumber} onChange={onPhoneNumberHandler} />

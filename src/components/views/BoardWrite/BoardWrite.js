@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import '../BoardWrite/BoardWrite.css'
 
 const BoardWrite = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const [board, setBoard] = useState({
     title: '',
@@ -11,27 +12,29 @@ const BoardWrite = () => {
     type: '',
     text: '',
   });
+    content: '',
+  })
 
   const { title, writer, type, text } = board; //비구조화 할당
 
   const onChange = (event) => {
-    const { value, name } = event.target; //event.target에서 name과 value만 가져오기
+    const { value, name } = event.target //event.target에서 name과 value만 가져오기
     setBoard({
       ...board,
       [name]: value,
-    });
-  };
+    })
+  }
 
   const saveBoard = async () => {
     await axios.post(`http://localhost:3001/board`, board).then((res) => {
-      alert('등록되었습니다.');
-      navigate('/board/worry');
-    });
-  };
+      alert('등록되었습니다.')
+      navigate('/board/worry')
+    })
+  }
 
   const backToList = () => {
-    navigate('/board/worry');
-  };
+    navigate('/board/worry')
+  }
 
   return (
     <div>
@@ -74,9 +77,12 @@ const BoardWrite = () => {
       <div>
         <button onClick={saveBoard}>저장</button>
         <button onClick={backToList}>취소</button>
+          <button type="submit" className="submit">
+            작성완료
+          </button>
+        </div>
       </div>
-    </div>
-  );
-};
+  )
+}
 
-export default BoardWrite;
+export default BoardWrite
