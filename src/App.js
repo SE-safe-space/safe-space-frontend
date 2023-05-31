@@ -12,7 +12,7 @@ import SignUpPage from './page/SignUpPage'
 // import BoardPage from './page/BoardPage'
 import CounselorPage from './page/CounselorPage'
 import ProfilePage from './page/ProfilePage'
-
+import BoardWritePage from './page/BoardWritePage'
 import GlobalStyle from './page/GlobalStyle'
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
           <Route path="/counselor" element={<CounselorPage />} />
           <Route path="/board/worry" element={<BoardList />} />
           <Route path="/board/worry/:id" element={<BoardDetail />} />
-          <Route path="/BoardWrite" element={<BoardWrite />} />
+          <Route path="/boardwrite" element={<BoardWritePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/logout" element={<Logout />} />
         </Routes>
