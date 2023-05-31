@@ -1,6 +1,10 @@
 import React from 'react'
 import '../Profile/Profile.css'
 
+const handleOpenNewTab = (url) => {
+  window.open(url, '_blank', 'noopener, noreferrer, width=400, height=500')
+}
+
 function Profile() {
   return (
     <>
@@ -25,7 +29,11 @@ function Profile() {
         <div className="profile__safespace">
           <h1>상담방 정보</h1>
           <ul>
-            <li>상담방 링크1</li>
+            <li>
+              <button onClick={() => handleOpenNewTab('/safespace')}>
+                상담방 링크
+              </button>
+            </li>
             <li>상담방 링크2</li>
           </ul>
         </div>

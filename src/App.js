@@ -14,7 +14,7 @@ import CounselorPage from './page/CounselorPage'
 import ProfilePage from './page/ProfilePage'
 import BoardWritePage from './page/BoardWritePage'
 import GlobalStyle from './page/GlobalStyle'
-
+import SafeSpace from './components/views/SafeSpace/SafeSpace'
 function App() {
   return (
     <>
@@ -30,6 +30,7 @@ function App() {
           <Route path="/boardwrite" element={<BoardWritePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/safespace" element={<SafeSpace />} />
         </Routes>
       </BrowserRouter>
     </>
