@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { registerUser } from '../../../_actions/user_action'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios';
 import '../SignUp/SignUp.css'
 
-function SignUp(props) {
-  const dispatch = useDispatch()
+function SignUp() {
+
+  const navigate = useNavigate()
 
   const [Email, setEmail] = useState('')
   const [Password, setPassword] = useState('')
@@ -27,7 +28,7 @@ function SignUp(props) {
   const onPhoneNumberHandler = (event) => {
     setPhoneNumber(event.currentTarget.value)
   }
-  const onSubmitHandler = (event) => {
+  const onSubmitHandler = async (event) => {
     event.preventDefault()
 
     let body = {
@@ -40,15 +41,11 @@ function SignUp(props) {
     }
     console.log(body)
 
-    dispatch(registerUser(body)).then((response) => {
-      if (response.payload.success) {
-        props.history.push(
-          'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/auth/signup',
-        )
-      } else {
-        alert('Error')
-      }
-    })
+    await axios.post(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/auth/signup`, body).then((res) => {
+        alert('등록되었습니다.');
+        navigate('/login');
+      });
+
   }
 
   return (
