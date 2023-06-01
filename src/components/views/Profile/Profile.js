@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { getCookieToken } from '../../../storage/Cookie'
 import { useSelector, useDispatch } from 'react-redux'
-import { SET_TOKEN } from '../store/Auth'
+import { SET_TOKEN } from '../../../storage/Auth'
 
 import '../Profile/Profile.css'
 
