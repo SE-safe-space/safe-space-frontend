@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 
 import '../Profile/Profile.css'
 
 const Profile = () => {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState([])
+  const navigate = useNavigate();
   const { accessToken } = useSelector((state) => state.authToken)
 
   useEffect(() => {
     const FetchUserInfo = async () => {
+
+      if (!accessToken) {
+        // Access token is null, display message box
+        window.alert('로그인이 필요합니다.');
+        navigate('/login'); // Navigate to '/login'
+        return;
+      }
+
       try {
         const response = await axios.get(
           'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me',
@@ -22,6 +32,8 @@ const Profile = () => {
         )
 
         setUser(response.data)
+        console.log(user)
+        console.log(response.data)
       } catch (error) {
         console.error('Error fetching user information:', error)
       }
@@ -46,8 +58,8 @@ const Profile = () => {
           <img className="profile__img" alt="profile_img" src="" />
           <button formAction="">사진 수정</button>
           {/* 프론트 로직 추가 필요 */}
-          <span>이메일:</span>
-          <span>이름:</span>
+          <span>이메일:{user.email}</span>
+          <span>이름:{user.name}</span>
           <span>별명:</span>
           <span>성별:</span>
           <span>연락처:</span>
