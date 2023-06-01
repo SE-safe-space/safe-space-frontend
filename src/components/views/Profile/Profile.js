@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { getCookieToken } from '../../../storage/Cookie'
-import { useSelector, useDispatch } from 'react-redux'
-import { SET_TOKEN } from '../../../storage/Auth'
+import { useSelector } from 'react-redux'
 
 import '../Profile/Profile.css'
 
 const Profile = () => {
-  const dispatch = useDispatch()
+
   const [user, setUser] = useState(null)
-  const { accessToken } = useSelector((state) => state.token)
+  const { accessToken } = useSelector((state) => state.authToken)
 
   useEffect(() => {
     const FetchUserInfo = async () => {
@@ -18,43 +16,14 @@ const Profile = () => {
           'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me',
           {
             headers: {
-              Authorization: `Bearer ${accessToken}`,
+              Authorization: `Bearer ${accessToken}`
             },
           },
         )
 
         setUser(response.data)
       } catch (error) {
-        if (error.response && error.response.status === 401) {
-          const refreshToken = getCookieToken('refreshToken')
-
-          try {
-            const refreshResponse = await axios.post(
-              'https://example.com/api/refresh',
-              {
-                refreshToken,
-              },
-            )
-
-            const newAccessToken = refreshResponse.data.accessToken
-            dispatch(SET_TOKEN(newAccessToken))
-
-            const retryResponse = await axios.get(
-              'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me',
-              {
-                headers: {
-                  Authorization: `Bearer ${newAccessToken}`,
-                },
-              },
-            )
-
-            setUser(retryResponse.data)
-          } catch (refreshError) {
-            console.error('Error refreshing access token:', refreshError)
-          }
-        } else {
-          console.error('Error fetching user information:', error)
-        }
+        console.error('Error fetching user information:', error)
       }
     }
 
