@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import BoardList from './components/views/BoardList/BoardList'
 import BoardWrite from './components/views/BoardWrite/BoardWrite'
-import BoardDetail from './components/views/BoardDetail/BoardDetail'
+import Board from './components/views/Board/Board'
+import BoardDetailPage from './page/BoardDetailPage'
 import Logout from './components/views/Logout/Logout'
 
 import MainPage from './page/MainPage'
@@ -15,6 +16,7 @@ import ProfilePage from './page/ProfilePage'
 import BoardWritePage from './page/BoardWritePage'
 import GlobalStyle from './page/GlobalStyle'
 import SafeSpace from './components/views/SafeSpace/SafeSpace'
+import BoardPage from './page/BoardPage'
 function App() {
   return (
     <>
@@ -25,12 +27,13 @@ function App() {
           <Route path="/signUp" element={<SignUpPage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path="/counselor" element={<CounselorPage />} />
-          <Route path="/board/worry" element={<BoardList />} />
-          <Route path="/board/worry/:id" element={<BoardDetail />} />
+          <Route path="/board/worry" element={<BoardPage />} />
+          <Route path="/board/worry/:id" element={<BoardDetailPage />} />
           <Route path="/boardwrite" element={<BoardWritePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/safespace" element={<SafeSpace />} />
+          <Route path="/Board" element={<Board />} />
         </Routes>
       </BrowserRouter>
     </>

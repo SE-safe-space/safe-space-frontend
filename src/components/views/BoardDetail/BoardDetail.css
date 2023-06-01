@@ -1,0 +1,82 @@
+.contents__wrap {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.detail__wrap {
+  border-top: 10px solid rgb(80, 201, 195);
+  box-shadow: 0px 3px 6px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.detail__header {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail__txt {
+  border-bottom: 1px solid rgb(221, 221, 221);
+  padding: 20px 10px;
+  height: 250px;
+
+  overflow: auto;
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.comment__wrap {
+  margin-top: 20px;
+  border-left: 8px solid rgb(246, 239, 207);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px 1px;
+  border-radius: 5px;
+  padding: 10px 10px 17px;
+  margin-bottom: 30px;
+}
+
+.comment__id {
+  padding: 7px 10px;
+}
+
+.comment__txt {
+  padding: 7px 10px;
+  border-top: 1px solid rgb(221, 221, 221);
+}
+
+.cmWrite__wrap {
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.cmWrite__wrap textarea {
+  width: calc(100% - 50px);
+  padding: 10px 20px;
+  margin-right: 10px;
+  outline: none;
+  border: none;
+  resize: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px 0px inset;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.cmWrite__wrap button {
+  width: 40px;
+  height: 50px;
+  box-sizing: border-box;
+  display: block;
+  background-color: green;
+  border-radius: 5px;
+  color: white;
+}

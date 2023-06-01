@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import Board from '../Board/Board';
-import Comments from "../Comments/Comments";
-
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import Board from '../Board/Board'
+import Comments from '../Comments/Comments'
+import '../BoardDetail/BoardDetail.css'
 const BoardDetail = () => {
-  const { id } = useParams(); 
-  const [loading, setLoading] = useState(true);
-  const [board, setBoard] = useState({});
+  const { id } = useParams()
+  const [loading, setLoading] = useState(true)
+  const [board, setBoard] = useState({})
   const getBoard = async () => {
-    const resp = await (await axios.get(`http://localhost:3001/board/${id}`)).data;
-    setBoard(resp);
-    setLoading(false);
-  };
+    const resp = await (await axios.get(`http://localhost:3001/board/${id}`))
+      .data
+    setBoard(resp)
+    setLoading(false)
+  }
 
   useEffect(() => {
-    getBoard();
-  }, []);
+    getBoard()
+  }, [])
 
   return (
     <div>
-      {loading ? (
+      {/* {loading ? (
         <h2>loading...</h2>
       ) : (
         <Board
@@ -30,14 +31,32 @@ const BoardDetail = () => {
           writer={board.writer}
         />
       )}
-    <hr/>
-    <div className="board-footer">
-      <Comments 
-        boardId={board.id}
-      />
-    </div>
-    </div>
-  );
-};
+      <hr />
+      <div className="board-footer">
+        <Comments boardId={board.id} />
+      </div> */}
+      <section class="content contents__wrap">
+        <div class="detail__wrap">
+          <div class="detail__header">
+            <div class="header__title">제목</div>
+            <div class="header__id">id입니당</div>
+          </div>
+          <div class="detail__txt">텍스트를 넣어주세요</div>
+        </div>
 
-export default BoardDetail;
+        <div class="comment__wrap">
+          <div class="comment__header">
+            <div class="comment__id">id입니당</div>
+          </div>
+          <div class="comment__txt">커맨트 내용을 넣어주세요</div>
+        </div>
+        <div class="cmWrite__wrap">
+          <textarea placeholder="욕설금지"></textarea>
+          <button>제출</button>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default BoardDetail
