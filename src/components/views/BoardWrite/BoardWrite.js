@@ -196,11 +196,21 @@ const BoardWrite = () => {
             </ul>
             <h4 className="category_title">응원 사연</h4>
             <ul className="category_group">
-              <li className="category__item">응원</li>
+              <li
+                className="category__item"
+                onClick={() => handleItemClick('응원')}
+              >
+                응원
+              </li>
             </ul>
             <h4 className="category_title">자유 사연</h4>
             <ul className="category_group">
-              <li className="category__item">자유</li>
+              <li
+                className="category__item"
+                onClick={() => handleItemClick('자유')}
+              >
+                자유
+              </li>
             </ul>
           </div>
 

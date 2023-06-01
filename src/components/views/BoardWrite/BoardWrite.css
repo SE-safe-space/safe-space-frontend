@@ -13,8 +13,9 @@
   cursor: pointer;
   border: NONE;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 16px;
   background-color: rgb(246, 239, 207);
+  margin-bottom: 10px;
 }
 
 .write__opt {
@@ -176,10 +177,11 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   row-gap: 10px;
+  font-size: 16px;
 }
 
 .category_more .category_group .category__item {
-  font-size: 15px;
+  font-size: 14px;
   margin-right: 10px;
   cursor: pointer;
 }
