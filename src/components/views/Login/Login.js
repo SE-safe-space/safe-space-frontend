@@ -37,6 +37,7 @@ function Login() {
       // 쿠키에 Refresh Token, store에 Access Token 저장
       setRefreshToken(response.json.refreshToken)
       dispatch(SET_TOKEN(response.json.accessToken))
+      console.log(response.json)
 
       return navigate('/')
     } else {
