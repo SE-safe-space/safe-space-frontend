@@ -9,8 +9,18 @@
 }
 
 .write__wrap button {
-  background-color: transparent;
+  /* background-color: transparent; */
   cursor: pointer;
+  border: NONE;
+  border-radius: 30px;
+  font-size: 14px;
+  background-color: rgb(246, 239, 207);
+}
+
+.write__opt {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 14px;
 }
 
 .write__wrap .write__header {
@@ -150,6 +160,8 @@
 
 .category_more.active {
   display: block;
+  position: sticky;
+  z-index: 2;
 }
 
 .category_more .category_title {
