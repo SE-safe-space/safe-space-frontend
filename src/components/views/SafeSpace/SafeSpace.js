@@ -58,20 +58,22 @@ const SafeSpace = () => {
   }
 
   return (
-    <div className="chat-box">
-      <header>
-        <h1>Chat</h1>
-      </header>
-      <section ref={messageListRef}>{renderMessages()}</section>
-      <footer>
-        <input
-          type="text"
-          id="message-input"
-          placeholder="Type a message..."
-          onKeyPress={handleKeyPress}
-        />
-      </footer>
-    </div>
+    <section className="chat-body">
+      <div className="chat-box">
+        <header>
+          <h1>Chat</h1>
+        </header>
+        <section ref={messageListRef}>{renderMessages()}</section>
+        <footer>
+          <input
+            type="text"
+            id="message-input"
+            placeholder="Type a message..."
+            onKeyPress={handleKeyPress}
+          />
+        </footer>
+      </div>
+    </section>
   )
 }
 

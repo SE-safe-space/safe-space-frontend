@@ -13,7 +13,7 @@ br {
   font-size: 0;
 }
 
-body {
+.chat-body {
   font-family: 'Karla', sans-serif;
   margin: 0;
   display: flex;
@@ -31,7 +31,7 @@ body {
   background-color: #eee;
   border-radius: 16px 16px 0 0;
   overflow: hidden;
-  border: 2px #45f solid;
+  /* border: 2px #45f solid; */
 }
 
 .chat-box header {

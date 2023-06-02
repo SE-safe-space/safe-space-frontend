@@ -1,24 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
 import '../Profile/Profile.css'
 
 const Profile = () => {
-
   const [user, setUser] = useState([])
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const { accessToken } = useSelector((state) => state.authToken)
 
   useEffect(() => {
     const FetchUserInfo = async () => {
-
       if (!accessToken) {
         // Access token is null, display message box
-        window.alert('로그인이 필요합니다.');
-        navigate('/login'); // Navigate to '/login'
-        return;
+        window.alert('로그인이 필요합니다.')
+        navigate('/login') // Navigate to '/login'
+        return
       }
 
       try {
@@ -26,7 +24,7 @@ const Profile = () => {
           'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me',
           {
             headers: {
-              Authorization: `Bearer ${accessToken}`
+              Authorization: `Bearer ${accessToken}`,
             },
           },
         )
@@ -43,7 +41,7 @@ const Profile = () => {
   }, [])
 
   const handleOpenNewTab = (url) => {
-    window.open(url, '_blank', 'noopener, noreferrer, width=400, height=500')
+    window.open(url, '_blank', 'noopener, noreferrer, width=300, height=400')
   }
 
   return (
