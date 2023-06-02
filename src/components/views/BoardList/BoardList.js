@@ -10,6 +10,14 @@ const BoardList = () => {
   const { accessToken } = useSelector((state) => state.authToken)
 
   const getBoardList = async () => {
+
+    if (!accessToken) {
+      // Access token is null, display message box
+      window.alert('로그인이 필요합니다.')
+      navigate('/login') // Navigate to '/login'
+      return
+    }
+
     const resp = await axios.get(
       'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/view',
       {
