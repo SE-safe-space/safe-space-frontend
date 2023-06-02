@@ -1,13 +1,43 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
+import { useSelector } from 'react-redux'
 
-const Comments = ({boardId, name}) => {
+const Comments = ({boardId}) => {
 
   const [commentList, setCommentList] = useState([]);
   const [text, setText] = useState("");
+  const { accessToken } = useSelector((state) => state.authToken)
+  const [user, setUser] = useState([])
+
+  useEffect(() => {
+    const FetchUserInfo = async () => {
+
+      try {
+        const response = await axios.get(
+          'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me',
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          },
+        )
+
+        setUser(response.data)
+      } catch (error) {
+        console.error('Error fetching user information:', error)
+      }
+    }
+    FetchUserInfo()
+  }, [])
 
   const getCommentList = async () => {
-    const resp = await (await axios.get(`http://localhost:3001/comment?boardId=${boardId}`)).data;
+    const resp = await (await axios.get(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/comment/${boardId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    },
+  )).data
     setCommentList(resp);
   };
 
@@ -16,16 +46,36 @@ const Comments = ({boardId, name}) => {
   }, []);
 
 
-  const submit = useCallback(async () => {
+  const submit = async () => {
+
+    if(user.type == "MEMBER") {
+      window.alert('상담사만 댓글을 작성할 수 있습니다.')
+      return
+    }
+
     const comment = {
-      boardIid: boardId,
-      name: name,
+      boardId: boardId,
+      userId: user.id,
+      name: user.name,
+      profileImage: user.profileImage,
       text: text
     }
-    await axios.post('http://localhost:3001/comment', comment);
-    alert("댓글 등록 완료");
-    window.location.reload();
-  }, [text]);
+
+    console.log(comment)
+
+    await axios.post(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/comment`,comment,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }).then((res) => {
+    alert("댓글 등록 완료")
+    window.location.reload()
+    })
+  }
+  
+  
+
   console.log(commentList)
 
   return (

@@ -1,19 +1,22 @@
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { useSelector } from 'react-redux'
 import '../BoardWrite/BoardWrite.css'
 
 const BoardWrite = () => {
   const navigate = useNavigate()
+  const { accessToken } = useSelector((state) => state.authToken)
 
   const [board, setBoard] = useState({
-    title: '',
     writer: '',
-    type: '',
-    content: '',
+    title: '',
+    hide: 0,
+    text: '',
+    type: ''
   })
 
-  const { title, writer, type, content } = board //비구조화 할당
+  const { writer, title, hide, text, type } = board //비구조화 할당
 
   const onChange = (event) => {
     const { value, name } = event.target //event.target에서 name과 value만 가져오기
@@ -24,7 +27,12 @@ const BoardWrite = () => {
   }
 
   const saveBoard = async () => {
-    await axios.post(`http://localhost:3001/board`, board).then((res) => {
+    await axios.post(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/write`, board,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }).then((res) => {
       alert('등록되었습니다.')
       navigate('/board/worry')
     })
