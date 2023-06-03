@@ -9,7 +9,7 @@ const CounselorDetail = () => {
     }
 
     return (
-        <div className='content_wrap'>
+        <div className='counselor_profile_content_wrap'>
             <div className="counselor_profile_header">
                 <div className="counselor_profile_title">
                     <div className="counselor_name">상담사 이름</div>

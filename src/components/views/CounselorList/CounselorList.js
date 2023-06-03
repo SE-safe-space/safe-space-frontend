@@ -21,81 +21,92 @@ const CounselorList = () => {
   }, []);
 
   return (
-      <div className="content_wrap">
-        <div className="counselor_list_header">
-          <span>상담사 목록</span>
-        </div>
-        <ul className="counselor_list">
-          {counselors.map((counselor) => (
-            <li className="counselor_profile" key={counselor.id}>
-              <Link to={`/counselor/id`}>
-                <div className="profile_img">
-                  <img src={counselor.profileImage} alt="profile" />
-                </div>
-                <div className="counselor_info">
-                  <div className="counselor_name">{counselor.name}</div>
-                  <div className="counseling_type">{counselor.counselingType}</div>
-                </div>
-              </Link>
-            </li>
-          ))}
-          <li className="counselor_profile">
-            <Link to={`/counselor/id`}>
-              <div className="profile_img">
-                <img src="profile_img.png" alt="profile" />
-              </div>
-              <div className="counselor_info">
-                <div className="counselor_name">상담사 이름</div>
-                <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
-              </div>
-            </Link>
-          </li>
-          <li className="counselor_profile">
-            <Link to={`/counselor/id`}>
-              <div className="profile_img">
-                <img src="profile_img.png" alt="profile" />
-              </div>
-              <div className="counselor_info">
-                <div className="counselor_name">상담사 이름</div>
-                <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
-              </div>
-            </Link>
-          </li>
-          <li className="counselor_profile">
-            <Link to={`/counselor/id`}>
-              <div className="profile_img">
-                <img src="profile_img.png" alt="profile" />
-              </div>
-              <div className="counselor_info">
-                <div className="counselor_name">상담사 이름</div>
-                <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
-              </div>
-            </Link>
-          </li>
-          <li className="counselor_profile">
-            <Link to={`/counselor/id`}>
-              <div className="profile_img">
-                <img src="profile_img.png" alt="profile" />
-              </div>
-              <div className="counselor_info">
-                <div className="counselor_name">상담사 이름</div>
-                <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
-              </div>
-            </Link>
-          </li>
-          <li className="counselor_profile">
-            <Link to={`/counselor/id`}>
-              <div className="profile_img">
-                <img src="profile_img.png" alt="profile" />
-              </div>
-              <div className="counselor_info">
-                <div className="counselor_name">상담사 이름</div>
-                <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
-              </div>
-            </Link>
-          </li>
-        </ul>
+    <div className="counselor_content_wrap">
+      <div className="counselor_list_header">
+        <span>상담사 목록</span>
       </div>
+      <ul className="counselor_list">
+        {counselors.map((counselor) => (
+          <li className="counselor_profile" key={counselor.id}>
+            <Link to={`/counselor/id`}>
+              <div className="counselor_profile_img">
+                <img src={counselor.profileImage} alt="profile" />
+              </div>
+              <div className="counselor_info">
+                <div className="counselor_name">{counselor.name}</div>
+                <div className="counseling_type">{counselor.counselingType}</div>
+              </div>
+            </Link>
+          </li>
+        ))}
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`}>
+            <div className="counselor_profile_img">
+              <img src="profile_img.png" alt="profile" />
+            </div>
+            <div className="counselor_info">
+              <div className="counselor_name">상담사 이름</div>
+              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+            </div>
+          </Link>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`}>
+            <div className="counselor_profile_img">
+              <img src="profile_img.png" alt="profile" />
+            </div>
+            <div className="counselor_info">
+              <div className="counselor_name">상담사 이름</div>
+              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+            </div>
+          </Link>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`}>
+            <div className="counselor_profile_img">
+              <img src="profile_img.png" alt="profile" />
+            </div>
+            <div className="counselor_info">
+              <div className="counselor_name">상담사 이름</div>
+              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+            </div>
+          </Link>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`}>
+            <div className="counselor_profile_img">
+              <img src="profile_img.png" alt="profile" />
+            </div>
+            <div className="counselor_info">
+              <div className="counselor_name">상담사 이름</div>
+              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+            </div>
+          </Link>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`}>
+            <div className="counselor_profile_img">
+              <img src="profile_img.png" alt="profile" />
+            </div>
+            <div className="counselor_info">
+              <div className="counselor_name">상담사 이름</div>
+              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+            </div>
+          </Link>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`}>
+            <div className="counselor_profile_img">
+              <img src="profile_img.png" alt="profile" />
+            </div>
+            <div className="counselor_info">
+              <div className="counselor_name">상담사 이름</div>
+              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+            </div>
+          </Link>
+        </li>
+      </ul>
+    </div>
   );
 };
 

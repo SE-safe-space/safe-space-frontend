@@ -3,7 +3,7 @@ import './Reservation.css'
 const Reservation = () => {
 
     return (
-        <div className="content_wrap">
+        <div className="reservation_content_wrap">
             <div className="reservation_doc">
                 <div className="reservation_doc_header">
                     <div className="gender"></div>
