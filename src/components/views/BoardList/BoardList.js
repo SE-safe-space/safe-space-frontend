@@ -50,9 +50,12 @@ const BoardList = () => {
       <ul className="post__wrap">
         {boardList &&
           boardList.map((board) => (
-            // 4) map 함수로 데이터 출력
-            <li key={board.id}>
-              <Link to={`/board/worry/${board.id}`}>{board.title}</Link>
+            <li className="post" key={board.id}>
+            <Link to={`/board/worry/${board.id}`}>
+              <h4 className="post__category">{board.type}</h4>
+              <h5 className="post__title">{board.title}</h5>
+              <p className="post__txt">{board.content}</p>
+            </Link>
             </li>
           ))}
         <li className="post">

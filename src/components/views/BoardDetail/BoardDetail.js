@@ -45,10 +45,10 @@ const BoardDetail = () => {
       <section class="content contents__wrap">
         <div class="detail__wrap">
           <div class="detail__header">
-            <div class="header__title">제목</div>
-            <div class="header__id">id입니당</div>
+            <div class="header__title">{board.title}</div>
+            <div class="header__id">{board.writer}</div>
           </div>
-          <div class="detail__txt">텍스트를 넣어주세요</div>
+          <div class="detail__txt">{board.text}</div>
         </div>
 
         <div class="comment__wrap">
