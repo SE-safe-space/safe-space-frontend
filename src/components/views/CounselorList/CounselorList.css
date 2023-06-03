@@ -11,7 +11,7 @@
 .counselor_list_header {
   font-size: 18pt;
   inline-size: 100%;
-  margin-bottom: 15px
+  margin-bottom: 15px;
 }
 
 .counselor_list {
@@ -25,7 +25,7 @@
 }
 
 .counselor_profile {
-  width: 30%;
+  width: 45%;
   max-width: 460px;
   min-width: 200px;
   padding: 15px 10px;
@@ -33,11 +33,11 @@
   margin-right: 8px;
   display: flex;
   position: relative;
-  height: 100px;
+  height: 150px;
   border: 1px solid #999;
 }
 
-.counselor_profile a{
+.counselor_profile a {
   display: flex;
   width: 100%;
 }
