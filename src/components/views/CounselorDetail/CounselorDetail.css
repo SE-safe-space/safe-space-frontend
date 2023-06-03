@@ -1,0 +1,163 @@
+.content_wrap {
+    margin: 130px auto 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 50%;
+    max-width: 900px;
+    min-width: 600px;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
+
+.counselor_profile_header {
+    width: 100%;
+    display: flex;
+    padding-bottom: 30px;
+    box-shadow: rgb(240, 240, 240) 0px -1px 0px 0px inset;
+}
+
+.counselor_profile_header>.counselor_profile_title {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.counselor_profile_title>.counselor_name {
+    font-size: 30pt;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.counselor_profile_title>.profile_img {
+    width: 200px;
+    height: 200px;
+    flex: 0 0 auto;
+    border: 1px solid #999;
+}
+
+.counselor_profile_header>.counselor_carrer {
+    width: 50%;
+    font-weight: lighter;
+    font-size: 14pt;
+}
+
+.counselor_carrer>.carrer_header {
+
+    margin-bottom: 20px;
+}
+
+.counselor_carrer>.carrer_content {
+    font-family: NotoSansKR-Light;
+    font-size: smaller;
+}
+
+.counselor_profile_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.counselor_profile_content>.counselor_introduce {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    box-shadow: rgb(240, 240, 240) 0px -1px 0px 0px inset;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.counselor_profile_content>.counselor_introduce>.counselor_introduce_header {
+    font-weight: bold;
+    font-size: x-large;
+    width: 50%;
+}
+
+.counselor_profile_content>.counselor_introduce>.counselor_introduce_content {
+    width: 50%;
+    font-family: NotoSansKR-Light;
+    font-weight: lighter;
+    margin-left: 20px;
+    white-space: pre-line;
+    word-break: keep-all;
+}
+
+.counselor_profile_content>.counselor_method {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    box-shadow: rgb(240, 240, 240) 0px -1px 0px 0px inset;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.counselor_profile_content>.counselor_method>.counselor_method_header {
+    font-weight: bold;
+    font-size: x-large;
+    width: 50%;
+}
+
+.counselor_profile_content>.counselor_method>.counselor_method_content {
+    width: 50%;
+        font-family: NotoSansKR-Light;
+        margin-left: 20px;
+        white-space: pre-line;
+        word-break: keep-all;
+}
+
+.counselor_profile_content>.counselor_advice {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.counselor_profile_content>.counselor_advice>.counselor_advice_header {
+    font-weight: bold;
+    font-size: x-large;
+    width: 50%;
+}
+
+.counselor_profile_content>.counselor_advice>.counselor_advice_content {
+    width: 50%;
+        font-weight: lighter;
+        margin-left: 20px;
+        white-space: pre-line;
+        word-break: keep-all;
+        font-family: NotoSansKR-Light;
+}
+
+.counselor_reservation{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.counselor_reservation_btn {
+    color: #ffffff;
+    background-color: #5cf0b2;
+    font-size: 15px;
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer
+}
+
+.counselor_reservation_btn:hover {
+    color: #5cf0b2;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #5cf0b2;
+    background-color: #ffffff;
+}

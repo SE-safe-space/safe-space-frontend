@@ -1,0 +1,12 @@
+.content_wrap {
+    margin: 130px auto 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 60%;
+    max-width: 900px;
+    min-width: 600px;
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
