@@ -46,6 +46,8 @@ const SafeSpace = () => {
       const className = itsMe ? 'me' : 'not-me'
       // 시간 데이터도 불러와서 끝에 넣어주기
       // 이미지를 넣지 않더라도, 상담사의 이름만 들어가게 해도 괜찮을 것 같네요
+      // 카톡 UI를 참고해서 본인 채팅은 그냥 보이고
+      // 상담사만 보이도록 했습니다.
       return (
         <>
           <div key={index} className={className}>
