@@ -18,15 +18,16 @@
   flex-direction: row;
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 0 auto;
+  max-width: 1500px;
   width: 100%;
   flex-wrap: wrap;
 }
 
-.counselor_profile {
-  width: 45%;
-  max-width: 460px;
+.counselor_list > .counselor_profile {
+  width: 30%;
+  max-width: 500px;
   min-width: 200px;
   padding: 15px 10px;
   margin-bottom: 12px;
@@ -42,15 +43,15 @@
   width: 100%;
 }
 
-.profile_img {
+.counselor_profile a > .counselor_profile_img {
   width: 100px;
-  height: 100px;
+  height: 120px;
   flex: 0 0 auto;
   margin-bottom: 10px;
   border: 1px solid #999;
 }
 
-.counselor_info {
+.counselor_profile a > .counselor_info {
   margin-left: 16px;
   display: flex;
   align-items: flex-end;
@@ -61,13 +62,13 @@
   min-width: 0;
 }
 
-.counselor_name {
+.counselor_info > .counselor_name {
   font-size: 15pt;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.counseling_type {
+.counselor_info > .counseling_type {
   font-size: 13px;
   color: rgb(134, 134, 134);
   max-width: 100%;

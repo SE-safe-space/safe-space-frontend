@@ -21,7 +21,7 @@ const CounselorList = () => {
   }, []);
 
   return (
-    <div className="counselor_content_wrap">
+    <div className="counselor_list_content_wrap">
       <div className="counselor_list_header">
         <span>상담사 목록</span>
       </div>
@@ -46,7 +46,7 @@ const CounselorList = () => {
             </div>
             <div className="counselor_info">
               <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+              <div className="counseling_type">상담 분야</div>
             </div>
           </Link>
         </li>
@@ -57,7 +57,7 @@ const CounselorList = () => {
             </div>
             <div className="counselor_info">
               <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+              <div className="counseling_type">상담 분야</div>
             </div>
           </Link>
         </li>
@@ -68,7 +68,7 @@ const CounselorList = () => {
             </div>
             <div className="counselor_info">
               <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+              <div className="counseling_type">상담 분야</div>
             </div>
           </Link>
         </li>
@@ -79,7 +79,7 @@ const CounselorList = () => {
             </div>
             <div className="counselor_info">
               <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+              <div className="counseling_type">상담 분야</div>
             </div>
           </Link>
         </li>
@@ -90,7 +90,7 @@ const CounselorList = () => {
             </div>
             <div className="counselor_info">
               <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+              <div className="counseling_type">상담 분야</div>
             </div>
           </Link>
         </li>
@@ -101,7 +101,7 @@ const CounselorList = () => {
             </div>
             <div className="counselor_info">
               <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">abcdefgdasdfasdfasdfsadfdsfdfdsafsdfsadf</div>
+              <div className="counseling_type">상담 분야</div>
             </div>
           </Link>
         </li>
