@@ -26,8 +26,8 @@ br {
 }
 
 .chat-box {
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 500px;
   background-color: #eee;
   border-radius: 16px 16px 0 0;
   overflow: hidden;
@@ -74,37 +74,38 @@ br {
   word-wrap: break-word;
 }
 
-.chat-box section div.me {
+.chat-box section div.not-me {
   text-align: left;
+  color: white;
 }
 
-.chat-box section div.me span {
+.chat-box section div.not-me span {
   background-color: #68c;
   border-radius: 4px 16px 16px 4px;
 }
 
-.chat-box section div.me span:first-of-type {
+.chat-box section div.not-me span:first-of-type {
   border-top-left-radius: 16px;
 }
 
-.chat-box section div.me span:last-of-type {
+.chat-box section div.not-me span:last-of-type {
   border-bottom-left-radius: 16px;
 }
 
-.chat-box section div.not-me {
+.chat-box section div.me {
   text-align: right;
 }
 
-.chat-box section div.not-me span {
+.chat-box section div.me span {
   background-color: #bcf;
   border-radius: 16px 4px 4px 16px;
 }
 
-.chat-box section div.not-me span:first-of-type {
+.chat-box section div.me span:first-of-type {
   border-top-right-radius: 16px;
 }
 
-.chat-box section div.not-me span:last-of-type {
+.chat-box section div.me span:last-of-type {
   border-bottom-right-radius: 16px;
 }
 
@@ -124,4 +125,10 @@ br {
 .block {
   display: block;
   width: 70%;
+}
+
+.chat-box__img {
+  margin-right: 5px;
+  width: 15px;
+  height: 15px;
 }
