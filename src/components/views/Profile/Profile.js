@@ -41,7 +41,7 @@ const Profile = () => {
   }, [])
 
   const handleOpenNewTab = (url) => {
-    window.open(url, '_blank', 'noopener, noreferrer, width=300, height=400')
+    window.open(url, '_blank', 'noopener, noreferrer, width=400, height=500')
   }
 
   return (
