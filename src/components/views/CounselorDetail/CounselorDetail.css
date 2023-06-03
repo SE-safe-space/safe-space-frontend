@@ -106,10 +106,10 @@
 
 .counselor_profile_content>.counselor_method>.counselor_method_content {
     width: 50%;
-        font-family: NotoSansKR-Light;
-        margin-left: 20px;
-        white-space: pre-line;
-        word-break: keep-all;
+    font-family: NotoSansKR-Light;
+    margin-left: 20px;
+    white-space: pre-line;
+    word-break: keep-all;
 }
 
 .counselor_profile_content>.counselor_advice {
@@ -129,14 +129,14 @@
 
 .counselor_profile_content>.counselor_advice>.counselor_advice_content {
     width: 50%;
-        font-weight: lighter;
-        margin-left: 20px;
-        white-space: pre-line;
-        word-break: keep-all;
-        font-family: NotoSansKR-Light;
+    font-weight: lighter;
+    margin-left: 20px;
+    white-space: pre-line;
+    word-break: keep-all;
+    font-family: NotoSansKR-Light;
 }
 
-.counselor_reservation{
+.counselor_reservation {
     width: 100%;
     display: flex;
     flex-direction: column;
