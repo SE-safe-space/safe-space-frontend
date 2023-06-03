@@ -12,6 +12,8 @@ import LoginPage from './page/LoginPage'
 import SignUpPage from './page/SignUpPage'
 // import BoardPage from './page/BoardPage'
 import CounselorPage from './page/CounselorPage'
+import CounselorDetailPage from './page/CounselorDetailPage'
+import ReservationPage from './page/ReservationPage'
 import ProfilePage from './page/ProfilePage'
 import BoardWritePage from './page/BoardWritePage'
 import GlobalStyle from './page/GlobalStyle'
@@ -27,6 +29,8 @@ function App() {
           <Route path="/signUp" element={<SignUpPage />} />
           <Route path="/profile/:id" element={<ProfilePage />} />
           <Route path="/counselor" element={<CounselorPage />} />
+          <Route path="/counselor/:id" element={<CounselorDetailPage />} />
+          <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/board/worry" element={<BoardPage />} />
           <Route path="/board/worry/:id" element={<BoardDetailPage />} />
           <Route path="/boardwrite" element={<BoardWritePage />} />

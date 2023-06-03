@@ -1,0 +1,80 @@
+.content_wrap {
+  margin: 98px auto 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 70%;
+  flex-wrap: wrap;
+}
+
+.counselor_list_header {
+  font-size: 18pt;
+  inline-size: 100%;
+  margin-bottom: 15px
+}
+
+.counselor_list {
+  flex-direction: row;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0 auto;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.counselor_profile {
+  width: 30%;
+  max-width: 460px;
+  min-width: 200px;
+  padding: 15px 10px;
+  margin-bottom: 12px;
+  margin-right: 8px;
+  display: flex;
+  position: relative;
+  height: 100px;
+  border: 1px solid #999;
+}
+
+.counselor_profile a{
+  display: flex;
+  width: 100%;
+}
+
+.profile_img {
+  width: 100px;
+  height: 100px;
+  flex: 0 0 auto;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+}
+
+.counselor_info {
+  margin-left: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-bottom: 10px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.counselor_name {
+  font-size: 15pt;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.counseling_type {
+  font-size: 13px;
+  color: rgb(134, 134, 134);
+  max-width: 100%;
+  /*hide content if over 2 line*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
