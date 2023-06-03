@@ -105,6 +105,7 @@ section {
 body {
   line-height: 1;
   font-family: "NotoSansKR-Medium";
+  font-size: 18px;
 }
 ol,
 ul {
