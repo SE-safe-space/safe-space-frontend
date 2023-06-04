@@ -56,11 +56,12 @@ const Profile = () => {
           <img className="profile__img" alt="profile_img" src="" />
           <button formAction="">사진 수정</button>
           {/* 프론트 로직 추가 필요 */}
-          <span>이메일:{user.email}</span>
-          <span>이름:{user.name}</span>
+          <span>이메일: {user.email}</span>
+          <span>이름: {user.name}</span>
+          {/* 별명 수정 기능? */}
           <span>별명:</span>
-          <span>성별:</span>
-          <span>연락처:</span>
+          <span>성별: {user.sex == 1 ? `남성` : `여성`}</span>
+          <span>연락처: {user.phoneNumber}</span>
           <button formAction="">비밀번호 수정</button>
         </div>
         <div className="profile__safespace">
