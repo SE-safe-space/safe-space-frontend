@@ -62,7 +62,9 @@ function Login() {
                   Email
                 </label>
                 <Input
-                  {...register('email', { required: 'Please Enter Your Email' })}
+                  {...register('email', {
+                    required: 'Please Enter Your Email',
+                  })}
                   type="text"
                   placeholder="Email"
                 />

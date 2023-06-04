@@ -4,13 +4,14 @@ import '../CounselorList/CounselorList.css'
 import { Link } from 'react-router-dom'
 
 
+
 const CounselorList = () => {
   const [counselors, setCounselors] = useState([]);
 
   useEffect(() => {
     const fetchCounselors = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/counselor'); // Replace with your API endpoint URL
+        const response = await axios.get('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/consult/counselor'); // Replace with your API endpoint URL
         setCounselors(response.data);
       } catch (error) {
         console.error('Error fetching counselors:', error);

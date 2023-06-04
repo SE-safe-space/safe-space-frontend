@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
@@ -7,14 +7,48 @@ import '../BoardWrite/BoardWrite.css'
 const BoardWrite = () => {
   const navigate = useNavigate()
   const { accessToken } = useSelector((state) => state.authToken)
+  const [user, setUser] = useState([])
+  const [text, setText] = useState("")
+  const [title, setTitle] = useState("")
+  const [type, setType] = useState('')
 
-  const [board, setBoard] = useState({
-    writer: '',
+  useEffect(() => {
+    const FetchUserInfo = async () => {
+
+      try {
+        const response = await axios.get(
+          'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me',
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          },
+        )
+
+        setUser(response.data)
+      } catch (error) {
+        console.error('Error fetching user information:', error)
+      }
+    }
+    FetchUserInfo()
+  }, [])
+
+  const board = {
+    writer: user.name,
+    title: title,
+    hide: 0,
+    text: text,
+    type: type
+  }
+
+  /*const [board, setBoard] = useState({
+    writer: user.name,
     title: '',
     hide: 0,
     text: '',
     type: ''
   })
+  
 
   const { writer, title, hide, text, type } = board //비구조화 할당
 
@@ -24,15 +58,17 @@ const BoardWrite = () => {
       ...board,
       [name]: value,
     })
-  }
+  }*/
 
   const saveBoard = async () => {
+
     await axios.post(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/write`, board,
     {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
     }).then((res) => {
+      console.log(board)
       alert('등록되었습니다.')
       navigate('/board/worry')
     })
@@ -55,6 +91,7 @@ const BoardWrite = () => {
     const writeCategory = writeCategoryRef.current
     categoryMore.classList.remove('active')
     writeCategory.textContent = text
+    setType(text)
     setIsActive(false)
   }
 
@@ -85,7 +122,7 @@ const BoardWrite = () => {
             ref={categoryMoreRef}
             className={`category_more  ${isActive ? 'active' : ''}`}
           >
-            <h4 className="category_title">고민사연</h4>
+            <h4 className="category_title">고민 사연</h4>
             <ul className="category_group">
               <li
                 className="category__item"
@@ -225,15 +262,21 @@ const BoardWrite = () => {
           <div className="write__desc">
             <input
               type="text"
+              onChange={(e) => {
+                setTitle(e.target.value)
+                }}
               placeholder="당신의 고민을 한줄로 요약해 주세요"
             />
           </div>
           <textarea
-            className="write__txt"
+            onChange={(e) => {
+            setText(e.target.value)
+            }}
             placeholder="전문가의 답변을 받기 위해 자세하게 작성해주세요"
+            className="write__txt"
           ></textarea>
 
-          <button type="submit" className="submit">
+          <button type="submit" className="submit" onClick={saveBoard}>
             작성완료
           </button>
         </div>

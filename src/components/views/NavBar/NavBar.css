@@ -8,9 +8,16 @@
   justify-content: flex-end;
   margin: auto 30px auto auto;
   background-color: #fff;
+  padding: 10px 5px;
 }
 .navbar__login li {
   padding: 5px 3px;
+}
+
+.navbar__login button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .nav__wrap {

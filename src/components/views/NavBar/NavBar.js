@@ -3,25 +3,41 @@ import '../NavBar/NavBar.css'
 import { Link } from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
 import { IoLogoGithub } from 'react-icons/io'
+import { useSelector } from 'react-redux'
+
 function NavBar() {
+  const { accessToken } = useSelector((state) => state.authToken)
+  const IsLogin = () => {
+    if (accessToken != null) {
+      return (
+        <div className="navbar__login">
+          <button>로그아웃</button>
+        </div>
+      )
+    } else {
+      return (
+        <div className="navbar__login">
+          <li>
+            <Link to="/login">로그인</Link>
+          </li>
+          <p>|</p>
+          <li>
+            <Link to="/signUp">회원가입</Link>
+          </li>
+        </div>
+      )
+    }
+  }
+
   return (
     <>
       <div className="nav__wrap">
         <nav className="login">
-          <div className="navbar__login">
-            <li>
-              <Link to="/login">로그인</Link>
-            </li>
-            <p>|</p>
-            <li>
-              <Link to="/signUp">회원가입</Link>
-            </li>
-          </div>
+          <IsLogin />
         </nav>
 
         <nav className="navbar">
           <div className="navbar__logo">
-            {/* <i className="fa-solid fa-person-breastfeeding"></i> */}
             <IoLogoGithub />
             <Link to="/">Safe Space</Link>
           </div>
@@ -33,15 +49,9 @@ function NavBar() {
             <li>
               <Link to="/board/worry">커뮤니티</Link>
             </li>
-            {/* <li>
-              <Link to="/">챌린지</Link>
-            </li> */}
             <li>
               <Link to="/counselor">상담사</Link>
             </li>
-            {/* <li>
-              <Link to="/">기타</Link>
-            </li> */}
             <li>
               <Link to="/profile/id">
                 <FiUser /> 프로필
