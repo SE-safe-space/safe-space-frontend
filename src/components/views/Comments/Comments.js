@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import { useSelector } from 'react-redux'
+import '../BoardDetail/BoardDetail.css'
 
 const Comments = ({boardId}) => {
 
@@ -31,12 +32,7 @@ const Comments = ({boardId}) => {
   }, [])
 
   const getCommentList = async () => {
-    const resp = await (await axios.get(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/comment/${boardId}`,
-    {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    },
+    const resp = await (await axios.get(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/comment/${boardId}`
   )).data
     setCommentList(resp);
   };
@@ -79,32 +75,25 @@ const Comments = ({boardId}) => {
   console.log(commentList)
 
   return (
-    <div >
-      <div >
-        <input type="text"
-          className="comments-header-textarea"
-          onChange={(e) => {
-            setText(e.target.value)
-          }}
-          placeholder="댓글을 입력해주세요✏️"
-        />
-        {text !== "" ? (
-          <button variant="outlined" onClick={submit}>등록하기</button>
-        ) : (
-          <button variant="outlined" disabled={true}>
-            등록하기
-          </button>
-        )}
+    <div>
+    {commentList.map((item, index) => (
+      <div key={index}>
+      <div class="comment__wrap">
+      <div class="comment__header">
+        <div class="comment__id">{item.name}</div>
       </div>
-      <div>
-        {commentList.map((item, index) => (
-          <div key={index}>
-            <div>{item.text}</div>
-            <hr/>
-          </div>
-        ))}
+      <div class="comment__txt">{item.text}</div>
+    </div>
+    </div>
+    ))}
+    <div class="cmWrite__wrap">
+      <textarea 
+        onChange={(e) => {
+        setText(e.target.value)
+        }}placeholder="욕설금지"></textarea>
+      <button onClick={submit}>제출</button>
       </div>
     </div>
-  );
+  )
 }
 export default Comments;

@@ -1,31 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import '../BoardList/BoardList.css'
 
 const BoardList = () => {
   const [boardList, setBoardList] = useState([])
   const navigate = useNavigate()
-  const { accessToken } = useSelector((state) => state.authToken)
 
   const getBoardList = async () => {
-
-    if (!accessToken) {
-      // Access token is null, display message box
-      window.alert('로그인이 필요합니다.')
-      navigate('/login') // Navigate to '/login'
-      return
-    }
-
     const resp = await axios.get(
-      'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/view',
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      },
-    )
+      'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/view')
+
+    //const resp = await axios.get('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/view')
     // 2) 게시글 목록 데이터에 할당
     setBoardList(resp.data) // 3) boardList 변수에 할당
     console.log(resp.data)
