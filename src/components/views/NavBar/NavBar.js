@@ -3,20 +3,39 @@ import '../NavBar/NavBar.css'
 import { Link } from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
 import { IoLogoGithub } from 'react-icons/io'
+import { useSelector } from 'react-redux'
+
 function NavBar() {
+  const { accessToken } = useSelector((state) => state.authToken)
+  const IsLogin = () => {
+    console.log({ accessToken })
+
+    if (accessToken != null) {
+      return (
+        <div className="navbar__login">
+          <li>로그아웃</li>
+        </div>
+      )
+    } else {
+      return (
+        <div className="navbar__login">
+          <li>
+            <Link to="/login">로그인</Link>
+          </li>
+          <p>|</p>
+          <li>
+            <Link to="/signUp">회원가입</Link>
+          </li>
+        </div>
+      )
+    }
+  }
+
   return (
     <>
       <div className="nav__wrap">
         <nav className="login">
-          <div className="navbar__login">
-            <li>
-              <Link to="/login">로그인</Link>
-            </li>
-            <p>|</p>
-            <li>
-              <Link to="/signUp">회원가입</Link>
-            </li>
-          </div>
+          <IsLogin />
         </nav>
 
         <nav className="navbar">
