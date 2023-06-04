@@ -13,7 +13,7 @@ function NavBar() {
     if (accessToken != null) {
       return (
         <div className="navbar__login">
-          <li>로그아웃</li>
+          <button>로그아웃</button>
         </div>
       )
     } else {

@@ -139,8 +139,9 @@ a {
   color: inherit;
   text-decoration: none;
 }  
+
 .content{
-    padding: 90px 10px 0;
+    padding: 120px 10px 0;
   }
   /* other styles */
 `
