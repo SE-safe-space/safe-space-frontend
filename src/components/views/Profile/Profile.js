@@ -9,6 +9,40 @@ const Profile = () => {
   const [user, setUser] = useState([])
   const navigate = useNavigate()
   const { accessToken } = useSelector((state) => state.authToken)
+  
+  /*const [picture, setPicture] = useState(null)
+
+  const handlePictureChange = (e) => {
+    const selectedPicture = e.target.files[0];
+    setPicture(selectedPicture);
+  };
+
+  const handleSubmitPicture = async (e) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData();
+      formData.append('picture', picture);
+
+      const response = await axios.patch('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/image', formData);
+      console.log('Picture updated successfully:', response.data);
+    } catch (error) {
+      console.error('Error updating picture:', error.response.data);
+    }
+  };*/
+  
+  /*const [password, setPassword] = useState('');
+
+  const handleChangePassword = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/api/update-password', { password });
+      console.log('Password updated successfully:', response.data);
+    } catch (error) {
+      console.error('Error updating password:', error.response.data);
+    }
+  };*/
+
 
   useEffect(() => {
     const FetchUserInfo = async () => {
@@ -55,12 +89,22 @@ const Profile = () => {
           <h1>프로필</h1>
           <img className="profile__img" alt="profile_img" src="" />
           <button formAction="">사진 수정</button>
+          {/*사진 수정 처리 예
+            <form onSubmit={handleSubmitPicture}>
+            <label>
+              New Picture:
+              <input type="file" accept="image/*" onChange={handlePictureChange} />
+            </label>
+            <button type="submit">Change Picture</button>
+          </form>
+          */}
           {/* 프론트 로직 추가 필요 */}
-          <span>이메일:{user.email}</span>
-          <span>이름:{user.name}</span>
+          <span>이메일: {user.email}</span>
+          <span>이름: {user.name}</span>
+          {/* 별명 수정 기능? */}
           <span>별명:</span>
-          <span>성별:</span>
-          <span>연락처:</span>
+          <span>성별: {user.sex == 1 ? `남성` : `여성`}</span>
+          <span>연락처: {user.phoneNumber}</span>
           <button formAction="">비밀번호 수정</button>
         </div>
         <div className="profile__safespace">
