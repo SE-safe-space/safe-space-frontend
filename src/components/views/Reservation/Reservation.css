@@ -1,12 +1,264 @@
+.reservation_page {
+    background-color: #e8fdf4;
+    padding: 1px 0px;
+}
+
 .reservation_content_wrap {
-    margin: 130px auto 0px;
+    margin: 50px auto 50px;
+    max-width: 90vw;
+    width: 640px;
+}
+
+.reservation_doc_header {
+    max-width: 90vw;
+    width: 640px;
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    display: flexbox;
+}
+
+.doc_header_cap {
+    background-color: #12D783;
+    color: rgba(255, 255, 255, 1);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 10px;
+    left: -1px;
+    top: -1px;
+    position: relative;
+    width: calc(100% + 2px);
+}
+
+.doc_header_title {
+    font-size: 18pt;
+    margin: 12px 12px;
+    padding: 8px 8px;
+}
+
+.divide_line {
+    border-bottom: 1px solid #dadce0;
+    margin: 0px 12px;
+}
+
+.doc_header_subtitle {
+    margin: 12px 12px;
+    margin-bottom: 15px;
+    padding: 8px 8px;
+    font-size: 15px;
+    color: rgb(134, 134, 134);
+    font-family: NotoSansKR-Light;
+    white-space: pre-line;
+}
+
+.reservation_listitem {
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 24px;
+    padding-bottom: 14px;
+    page-break-inside: avoid;
+    word-wrap: break-word;
+}
+
+.reservation_question {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: NotoSansKR-Light;
+}
+
+.reservation_answer {
+    font-size: 15px;
+    font-weight: lighter;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: NotoSansKR-Light;
+}
+
+.reservation_answer>li {
+    margin-bottom: 10px;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 60%;
-    max-width: 900px;
-    min-width: 600px;
+}
+
+.reservation_answer>li>label>span {
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.radio_element {
+    margin-top: 0px;
+    margin-right: 10px;
+    vertical-align: middle;
+    appearance: none;
+    border: max(1px, 0.1vw) solid gray;
+    border-radius: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    transition: ease-in-out 0.15s;
+}
+
+.radio_element::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.3s transform ease-in-out;
+    box-shadow: inset 6px 6px #ffffff;
+}
+
+.radio_element:checked {
+    border: 0.4em solid #12D783;
+}
+
+.radio_element:checked::before {
+    transform: scale(1);
+}
+
+.radio_element:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+    cursor: pointer;
+}
+
+.inputText_element {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 50%;
+    border-bottom: 1px solid #dadce0;
+}
+
+.inputText_element:focus {
+    outline: none;
+    border-bottom: 2px solid #12D783;
+    transition: 0.1s ease-in;
+}
+
+.inputText_element:invalid {
+    border-bottom: 2px solid #f1141f;
+    transition: 0.1s ease-in;
+}
+
+.reservation_answer.category {
+    display: flex;
     flex-wrap: wrap;
-    padding-bottom: 100px;
+    justify-content: space-between;
+    padding-bottom: 10px
+}
+
+.reservation_answer.category>label {
+    margin-bottom: 10px;
+    display: flex;
+    width: 50%;
+    cursor: pointer;
+}
+
+.reservation_answer.category>label>span {
+    vertical-align: middle;
+}
+
+.checkBox_element {
+    margin-right: 10px;
+    vertical-align: middle;
+    border-radius: 5px;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.reservation_answer.symptom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 10px
+}
+
+.reservation_answer.symptom>label {
+    margin-bottom: 10px;
+    display: flex;
+    width: 50%;
+    cursor: pointer;
+}
+
+.reservation_answer.symptom>label>span {
+    vertical-align: middle;
+}
+
+.inputText_element.expectation {
+    width: 95%;
+}
+
+.reservation_answer.expectation {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px
+}
+
+.reservation_answer.expectation>label {
+    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+}
+
+.reservation_answer.counseling_history {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px
+}
+
+.reservation_answer.counseling_history>label {
+    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+}
+
+.textarea_element {
+    width: 95%;
+    height: 40px;
+    border: 0;
+    border-bottom: 1px solid #dadce0;
+    padding: 10px;
+    resize: none;
+    font-family: NotoSansKR-Light;
+}
+
+.textarea_element:focus {
+    outline: none;
+    border-bottom: 2px solid #12D783;
+    transition: 0.1s ease-in;
+}
+
+.textarea_element::-webkit-scrollbar {
+    display: none;
+}
+
+.commit_button_wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.commit_button_element {
+    color: #ffffff;
+    background-color: #12D783;
+    font-size: 15px;
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer
+}
+
+.commit_button_element:hover {
+    color: #12D783;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #12D783;
+    background-color: #ffffff;
 }

@@ -72,6 +72,7 @@ const Profile = () => {
     }
 
     FetchUserInfo()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const handleOpenNewTab = (url) => {
@@ -103,7 +104,7 @@ const Profile = () => {
           <span>이름: {user.name}</span>
           {/* 별명 수정 기능? */}
           <span>별명:</span>
-          <span>성별: {user.sex == 1 ? `남성` : `여성`}</span>
+          <span>성별: {user.sex === 1 ? `남성` : `여성`}</span>
           <span>연락처: {user.phoneNumber}</span>
           <button formAction="">비밀번호 수정</button>
         </div>

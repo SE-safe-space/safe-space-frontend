@@ -41,13 +41,12 @@ const CounselorList = () => {
 
   return (
     <div className="counselor_list_content_wrap">
-      <div className="counselor_list_header">
-        <span>상담사 목록</span>
-      </div>
+      <div className="counselor_list_header">상담사 목록</div>
+      
       <ul className="counselor_list">
         {counselors.map((counselor) => (
           <li className="counselor_profile" key={counselor.id}>
-            <Link to={`/counselor/id`}>
+            <Link to={`/counselor/id`} />
               <div className="counselor_profile_img">
                 <img src={counselor.profileImage} alt="profile" />
               </div>
@@ -55,74 +54,167 @@ const CounselorList = () => {
                 <div className="counselor_name">{counselor.name}</div>
                 <div className="counseling_type">{counselor.counselingType}</div>
               </div>
-            </Link>
           </li>
         ))}
         <li className="counselor_profile">
-          <Link to={`/counselor/id`}>
-            <div className="counselor_profile_img">
-              <img src="profile_img.png" alt="profile" />
-            </div>
-            <div className="counselor_info">
-              <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">상담 분야</div>
-            </div>
-          </Link>
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
         </li>
         <li className="counselor_profile">
-          <Link to={`/counselor/id`}>
-            <div className="counselor_profile_img">
-              <img src="profile_img.png" alt="profile" />
-            </div>
-            <div className="counselor_info">
-              <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">상담 분야</div>
-            </div>
-          </Link>
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
         </li>
         <li className="counselor_profile">
-          <Link to={`/counselor/id`}>
-            <div className="counselor_profile_img">
-              <img src="profile_img.png" alt="profile" />
-            </div>
-            <div className="counselor_info">
-              <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">상담 분야</div>
-            </div>
-          </Link>
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
         </li>
         <li className="counselor_profile">
-          <Link to={`/counselor/id`}>
-            <div className="counselor_profile_img">
-              <img src="profile_img.png" alt="profile" />
-            </div>
-            <div className="counselor_info">
-              <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">상담 분야</div>
-            </div>
-          </Link>
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
         </li>
         <li className="counselor_profile">
-          <Link to={`/counselor/id`}>
-            <div className="counselor_profile_img">
-              <img src="profile_img.png" alt="profile" />
-            </div>
-            <div className="counselor_info">
-              <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">상담 분야</div>
-            </div>
-          </Link>
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
         </li>
         <li className="counselor_profile">
-          <Link to={`/counselor/id`}>
-            <div className="counselor_profile_img">
-              <img src="profile_img.png" alt="profile" />
-            </div>
-            <div className="counselor_info">
-              <div className="counselor_name">상담사 이름</div>
-              <div className="counseling_type">상담 분야</div>
-            </div>
-          </Link>
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
+        </li>
+        <li className="counselor_profile">
+          <Link to={`/counselor/id`} />
+          <div className="counselor_profile_img">
+            <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+          </div>
+          <div className="counselor_info">
+            <div className="counselor_name">상담사 이름</div>
+            <div className="counseling_type">상담 분야</div>
+          </div>
         </li>
       </ul>
     </div>
