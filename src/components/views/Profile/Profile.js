@@ -10,7 +10,7 @@ const Profile = () => {
   const navigate = useNavigate()
   const { accessToken } = useSelector((state) => state.authToken)
   
-  /*const [picture, setPicture] = useState(null)
+  const [picture, setPicture] = useState(null)
 
   const handlePictureChange = (e) => {
     const selectedPicture = e.target.files[0];
@@ -29,7 +29,7 @@ const Profile = () => {
     } catch (error) {
       console.error('Error updating picture:', error.response.data);
     }
-  };*/
+  };
   
   /*const [password, setPassword] = useState('');
 
@@ -88,17 +88,13 @@ const Profile = () => {
       <div className="profile">
         <div className="profile__privacy">
           <h1>프로필</h1>
-          <img className="profile__img" alt="profile_img" src="" />
-          <button formAction="">사진 수정</button>
-          {/*사진 수정 처리 예
+          <img className="profile__img" alt="profile_img" src={user.profileImage} />
             <form onSubmit={handleSubmitPicture}>
-            <label>
-              New Picture:
-              <input type="file" accept="image/*" onChange={handlePictureChange} />
+            <label htmlFor="pictureInput">
+              <input type="file" accept="image/*" id="pictureInput" onChange={handlePictureChange} />
             </label>
-            <button type="submit">Change Picture</button>
+            <button type="submit">사진 수정</button>
           </form>
-          */}
           {/* 프론트 로직 추가 필요 */}
           <span>이메일: {user.email}</span>
           <span>이름: {user.name}</span>
