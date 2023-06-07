@@ -1,8 +1,21 @@
 import './CounselorDetail.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const CounselorDetail = () => {
     const navigate = useNavigate()
+
+    const { id } = useParams()
+    const [counselor, setCounselor] = useState({})
+    const getCounselor = async () => {
+      const resp = await (await axios.get(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/consult/counselor/${id}`)).data
+      setCounselor(resp)
+    }
+
+    useEffect(() => {
+      getCounselor()
+    }, [])
 
     const moveToRerservation = () => {
         navigate('/reservation')
@@ -12,7 +25,7 @@ const CounselorDetail = () => {
         <div className='counselor_profile_content_wrap'>
             <div className="counselor_profile_header">
                 <div className="counselor_profile_title">
-                    <div className="counselor_name">상담사 이름</div>
+                    <div className="counselor_name">{counselor.name}</div>
                     <div className="profile_img">
                         <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
                     </div>

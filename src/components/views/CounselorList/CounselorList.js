@@ -46,7 +46,7 @@ const CounselorList = () => {
       <ul className="counselor_list">
         {counselors.map((counselor) => (
           <li className="counselor_profile" key={counselor.id}>
-            <Link to={`/counselor/id`} />
+            <Link to={`/counselor/${counselor.id}`} />
               <div className="counselor_profile_img">
                 <img src={counselor.profileImage} alt="profile" />
               </div>
