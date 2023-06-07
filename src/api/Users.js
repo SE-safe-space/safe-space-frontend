@@ -108,3 +108,21 @@ export const requestToken = async (refreshToken) => {
         return statusError;
     }
 };
+
+export const checkAuth = async (accessToken) => {
+    try {
+      const response = await fetch('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/token', {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
+      });
+  
+      if (!response.ok) {
+        throw new Error('인증 확인 실패');
+      }
+  
+      return response.json();
+    } catch (error) {
+      throw new Error(`인증 확인 중 오류 발생: ${error.message}`);
+    }
+  };
