@@ -8,13 +8,12 @@ const BoardWrite = () => {
   const navigate = useNavigate()
   const { accessToken } = useSelector((state) => state.authToken)
   const [user, setUser] = useState([])
-  const [text, setText] = useState("")
-  const [title, setTitle] = useState("")
+  const [text, setText] = useState('')
+  const [title, setTitle] = useState('')
   const [type, setType] = useState('')
 
   useEffect(() => {
     const FetchUserInfo = async () => {
-
       try {
         const response = await axios.get(
           'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me',
@@ -38,7 +37,7 @@ const BoardWrite = () => {
     title: title,
     hide: 0,
     text: text,
-    type: type
+    type: type,
   }
 
   /*const [board, setBoard] = useState({
@@ -61,17 +60,21 @@ const BoardWrite = () => {
   }*/
 
   const saveBoard = async () => {
-
-    await axios.post(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/write`, board,
-    {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    }).then((res) => {
-      console.log(board)
-      alert('등록되었습니다.')
-      navigate('/board/worry')
-    })
+    await axios
+      .post(
+        `https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/write`,
+        board,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        },
+      )
+      .then((res) => {
+        console.log(board)
+        alert('등록되었습니다.')
+        navigate('/board/worry')
+      })
   }
 
   const backToList = () => {
@@ -264,16 +267,18 @@ const BoardWrite = () => {
               type="text"
               onChange={(e) => {
                 setTitle(e.target.value)
-                }}
+              }}
               placeholder="당신의 고민을 한줄로 요약해 주세요"
+              required
             />
           </div>
           <textarea
             onChange={(e) => {
-            setText(e.target.value)
+              setText(e.target.value)
             }}
             placeholder="전문가의 답변을 받기 위해 자세하게 작성해주세요"
             className="write__txt"
+            required
           ></textarea>
 
           <button type="submit" className="submit" onClick={saveBoard}>
