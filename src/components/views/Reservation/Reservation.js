@@ -59,7 +59,7 @@ const Reservation = () => {
   }
 
   return (
-    <form className="reservation_page" onSubmit={checkForm}>
+    <div className="reservation_page">
       <div className="reservation_content_wrap">
         <div className="reservation_doc">
           <div className="reservation_doc_header">
@@ -286,13 +286,13 @@ const Reservation = () => {
             </div>
             <div className="commit_button">
               <div className="commit_button_wrapper">
-                <input type='submit' className="commit_button_element" />
+              <button type="submit" className="submit" onClick={checkForm}>제출</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </form>
+    </div>
   )
 }
 
