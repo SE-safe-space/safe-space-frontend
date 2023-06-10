@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import { useSelector } from 'react-redux'
 import '../BoardDetail/BoardDetail.css'
 
 const Comments = ({boardId}) => {
 
   const [commentList, setCommentList] = useState([]);
   const [text, setText] = useState("");
-  const { accessToken } = useSelector((state) => state.authToken)
+  const accessToken = localStorage.getItem('accessToken');
   const [user, setUser] = useState([])
 
   useEffect(() => {

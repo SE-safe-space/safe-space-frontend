@@ -1,12 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
 import '../BoardWrite/BoardWrite.css'
 
 const BoardWrite = () => {
   const navigate = useNavigate()
-  const { accessToken } = useSelector((state) => state.authToken)
+  const accessToken = localStorage.getItem('accessToken');
   const [user, setUser] = useState([])
   const [text, setText] = useState('')
   const [title, setTitle] = useState('')
@@ -39,25 +38,6 @@ const BoardWrite = () => {
     text: text,
     type: type,
   }
-
-  /*const [board, setBoard] = useState({
-    writer: user.name,
-    title: '',
-    hide: 0,
-    text: '',
-    type: ''
-  })
-  
-
-  const { writer, title, hide, text, type } = board //비구조화 할당
-
-  const onChange = (event) => {
-    const { value, name } = event.target //event.target에서 name과 value만 가져오기
-    setBoard({
-      ...board,
-      [name]: value,
-    })
-  }*/
 
   const saveBoard = async () => {
     await axios

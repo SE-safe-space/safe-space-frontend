@@ -17,9 +17,9 @@ const CounselorDetail = () => {
       getCounselor()
     }, [])
 
-    const moveToRerservation = () => {
-        navigate('/reservation')
-    }
+    const moveToReservation = (counselorId) => {
+        navigate(`/reservation/${counselorId}`)
+      }
 
     return (
         <div className='counselor_profile_content_wrap'>
@@ -27,7 +27,7 @@ const CounselorDetail = () => {
                 <div className="counselor_profile_title">
                     <div className="counselor_name">{counselor.name}</div>
                     <div className="profile_img">
-                        <img src="https://cse.knu.ac.kr/data/file/sub2_1/thumb-6db859d91a4e6fcd421a1f27612bb49b_NQljiSPI_a79a90400f5e10dfc2acd50fcae0be9ab459e8c1_396x226.jpg" alt="profile" />
+                        <img src={counselor.profileImage} alt="profile" />
                     </div>
                 </div>
                 <div className="counselor_carrer">
@@ -41,15 +41,7 @@ const CounselorDetail = () => {
                         상담사 소개
                     </div>
                     <div className="counselor_introduce_content">
-                        "안녕하세요
-
-                        상담은 처음이신가요? 이곳은 당신이 그동안 꺼내지 못했던 깊은 속마음을 나눌 수 있는 안전한 곳입니다. 어떠한 이야기라도 괜찮습니다.
-
-                        지금-여기에서 나와 당신의 마음이 연결되어 마음의 쉼을 얻을 수 있습니다.
-
-                        삶의 무대에서 힘드셨을 당신을 응원합니다.
-
-                        상담을 결심한 당신의 용기는 이미 치유의 시작입니다."
+                        {counselor.introduction}
                     </div>
                 </div>
                 <div className="counselor_method">
@@ -73,7 +65,7 @@ const CounselorDetail = () => {
                 </div>
             </div>
             <div className="counselor_profile_footer">
-                <button type="button" className="counselor_reservation_btn" onClick={moveToRerservation}>예약하기</button>
+                <button type="button" className="counselor_reservation_btn" onClick={() => moveToReservation(counselor.id)}>예약하기</button>
             </div>
         </div>
     )

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import '../Profile/Profile.css'
@@ -8,7 +7,7 @@ import '../Profile/Profile.css'
 const Profile = () => {
   const [user, setUser] = useState([])
   const navigate = useNavigate()
-  const { accessToken } = useSelector((state) => state.authToken)
+  const accessToken = localStorage.getItem('accessToken');
   
   const [picture, setPicture] = useState(null)
 
@@ -95,10 +94,8 @@ const Profile = () => {
             </label>
             <button type="submit">사진 수정</button>
           </form>
-          {/* 프론트 로직 추가 필요 */}
           <span>이메일: {user.email}</span>
           <span>이름: {user.name}</span>
-          {/* 별명 수정 기능? */}
           <span>별명:</span>
           <span>성별: {user.sex === 1 ? `남성` : `여성`}</span>
           <span>연락처: {user.phoneNumber}</span>

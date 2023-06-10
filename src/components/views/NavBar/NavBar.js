@@ -3,15 +3,21 @@ import '../NavBar/NavBar.css'
 import { Link } from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
 import { IoLogoGithub } from 'react-icons/io'
-import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 function NavBar() {
-  const { accessToken } = useSelector((state) => state.authToken)
+  const accessToken = localStorage.getItem('accessToken');
+  const navigate = useNavigate()
   const IsLogin = () => {
     if (accessToken != null) {
+
+      const handleClick = () => {
+        navigate('/logout');
+      };
+
       return (
         <div className="navbar__login">
-          <button>로그아웃</button>
+          <button onClick={handleClick}>로그아웃</button>
         </div>
       )
     } else {
