@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 
 import { HiLockClosed } from 'react-icons/hi'
@@ -7,7 +6,6 @@ import { ErrorMessage } from '@hookform/error-message'
 
 import { loginUser } from '../../../api/Users'
 import { setRefreshToken } from '../../../storage/Cookie'
-import { SET_TOKEN } from '../../../storage/Auth'
 
 import tw from 'twin.macro'
 import '../Login/Login.css'
@@ -18,7 +16,6 @@ const Input = tw.input`
 
 function Login() {
   const navigate = useNavigate()
-  const dispatch = useDispatch()
 
   // useForm 사용을 위한 선언
   const {
@@ -36,7 +33,7 @@ function Login() {
     if (response.status) {
       // 쿠키에 Refresh Token, store에 Access Token 저장
       setRefreshToken(response.json.refreshToken)
-      dispatch(SET_TOKEN(response.json.accessToken))
+      localStorage.setItem('accessToken', response.json.accessToken);
       console.log(response.json)
 
       return navigate('/')

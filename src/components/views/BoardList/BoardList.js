@@ -13,7 +13,6 @@ const BoardList = () => {
       'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/view',
     )
 
-    //const resp = await axios.get('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/view')
     // 2) 게시글 목록 데이터에 할당
     setBoardList(resp.data) // 3) boardList 변수에 할당
     // console.log(resp.data)

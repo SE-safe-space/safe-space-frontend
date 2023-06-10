@@ -2,11 +2,10 @@ import './Reservation.css'
 import React, { useRef, useState, useCallback, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
 
 const Reservation = () => {
   const navigate = useNavigate()
-  const { accessToken } = useSelector((state) => state.authToken)
+  const accessToken = localStorage.getItem('accessToken');
   const textRef = useRef();
   const handleResizeHeight = useCallback(() => {
     textRef.current.style.height = "auto";

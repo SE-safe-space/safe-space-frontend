@@ -1,12 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { useSelector } from 'react-redux'
 import '../BoardWrite/BoardWrite.css'
 
 const BoardWrite = () => {
   const navigate = useNavigate()
-  const { accessToken } = useSelector((state) => state.authToken)
+  const accessToken = localStorage.getItem('accessToken');
   const [user, setUser] = useState([])
   const [text, setText] = useState('')
   const [title, setTitle] = useState('')
