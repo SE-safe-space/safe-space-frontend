@@ -40,25 +40,6 @@ const BoardWrite = () => {
     type: type,
   }
 
-  /*const [board, setBoard] = useState({
-    writer: user.name,
-    title: '',
-    hide: 0,
-    text: '',
-    type: ''
-  })
-  
-
-  const { writer, title, hide, text, type } = board //비구조화 할당
-
-  const onChange = (event) => {
-    const { value, name } = event.target //event.target에서 name과 value만 가져오기
-    setBoard({
-      ...board,
-      [name]: value,
-    })
-  }*/
-
   const saveBoard = async () => {
     await axios
       .post(

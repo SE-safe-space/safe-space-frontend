@@ -1,10 +1,8 @@
 import './Reservation.css'
-import React, { useRef, useState, useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useRef, useState, useCallback, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
-
-
 
 const Reservation = () => {
   const navigate = useNavigate()
@@ -15,23 +13,53 @@ const Reservation = () => {
     textRef.current.style.height = textRef.current.scrollHeight + "px";
   }, []);
 
-  const Checkform = () => {
-    //check input value
+  const { id } = useParams();
+
+  const [user, setUser] = useState([])
+  const [text, setText] = useState('')
+  const [type, setType] = useState('')
+
+  useEffect(() => {
+    const FetchUserInfo = async () => {
+      try {
+        const response = await axios.get(
+          'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/me',
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          },
+        )
+
+        setUser(response.data)
+      } catch (error) {
+        console.error('Error fetching user information:', error)
+      }
+    }
+    FetchUserInfo()
+  }, [])
+
+  const reservationForm = {
+    memberId: user.id,
+    counselorId: id,
+    type: type,
+    text: text
   }
-  /*const saveBoard = async () => {
-      await axios.post(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/write`, board,
-      {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }).then((res) => {
-        alert('등록되었습니다.')
-        navigate('/board/worry')
-      })
-    }*/
+
+  const checkForm = async () => {
+    const resp = await axios.post(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/consult/reserve`, reservationForm,
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }).then((res) => {
+      alert('신청되었습니다.')
+      navigate(`/counselor`)
+    })
+  }
 
   return (
-    <div className="reservation_page" onSubmit={Checkform()}>
+    <form className="reservation_page" onSubmit={checkForm}>
       <div className="reservation_content_wrap">
         <div className="reservation_doc">
           <div className="reservation_doc_header">
@@ -219,10 +247,14 @@ const Reservation = () => {
               <div className="divide_line"></div>
               <div className="reservation_answer counseling_content">
                 <textarea name="counseling_content" id="counseling_content" rows="1"
+                  onChange={(e) => {
+                    setType(e.target.value)
+                  }}
                   className="textarea_element"
                   ref={textRef}
                   placeholder="내용을 입력해주세요"
-                  onInput={handleResizeHeight} />
+                  onInput={handleResizeHeight}
+                   />
               </div>
             </div>
             <div className="reservation_listitem growth_process">
@@ -233,7 +265,8 @@ const Reservation = () => {
                   className="textarea_element"
                   ref={textRef}
                   placeholder="내용을 입력해주세요"
-                  onInput={handleResizeHeight} />
+                  onInput={handleResizeHeight} 
+                  />
               </div>
             </div>
             <div className="reservation_listitem additional_content">
@@ -241,10 +274,14 @@ const Reservation = () => {
               <div className="divide_line"></div>
               <div className="reservation_answer additional_content">
                 <textarea name="additional_content" id="additional_content" rows="1"
+                  onChange={(e) => {
+                    setText(e.target.value)
+                  }}
                   className="textarea_element"
                   ref={textRef}
                   placeholder="내용을 입력해주세요"
-                  onInput={handleResizeHeight} />
+                  onInput={handleResizeHeight} 
+                  />
                   </div>
             </div>
             <div className="commit_button">
@@ -255,7 +292,7 @@ const Reservation = () => {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   )
 }
 
