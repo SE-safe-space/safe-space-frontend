@@ -87,7 +87,7 @@ function Login() {
                   placeholder="Password"
                 />
                 <ErrorMessage
-                  name="email"
+                  name="password"
                   errors={errors}
                   render={({ message }) => (
                     <p className="text-sm font-medium text-rose-500">

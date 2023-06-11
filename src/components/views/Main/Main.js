@@ -17,6 +17,7 @@ const Main = () => {
         navigate('/board/worry')
     }
 
+
     const SliderSettings = {
         dots: true,
         arrows: true,
@@ -59,27 +60,47 @@ const Main = () => {
                     <div className="recent_board_list_content">
                         <ul>
                             <li className="recent_item">
+                                <Link to={`/board/worry/id`} />
                                 <div className="item_title">
                                     최근글 제목1
                                 </div>
                                 <div className="item_content">
-                                    최근글 내용
+                                    최근글 내용dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
                                 </div>
                             </li>
                             <li className="recent_item">
+                                <Link to={`/board/worry/id`} />
                                 <div className="item_title">
                                 </div>
                                 <div className="item_content">
                                 </div>
                             </li>
                             <li className="recent_item">
+                                <Link to={`/board/worry/id`} />
                                 <div className="item_title">
                                 </div>
                                 <div className="item_content">
                                 </div>
                             </li>
                         </ul>
-
+                    </div>
+                </div>
+                <div className="counselor_board">
+                    <div className="counselor_board_title">
+                        전문 상담사와의 상담을 통해 고민을 해결해보세요
+                    </div>
+                    <div className="counselor_board_content">
+                        <ul>
+                            <li className="counselor_item">
+                                <Link to={`/board/worry/id`} />
+                                <div className="item_title">
+                                    상담사 사진
+                                </div>
+                                <div className="item_content">
+                                    상담사 이름
+                                   </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

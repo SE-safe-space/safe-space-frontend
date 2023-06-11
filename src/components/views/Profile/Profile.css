@@ -1,7 +1,7 @@
 .profile {
   display: flex;
-  width: 70%;
-  padding: 5px 16px;
+  width: 50%;
+  padding: 5px 10px;
   margin: 0 auto;
   font-size: 14px;
   flex-direction: row;
@@ -11,7 +11,7 @@
 
 .profile__privacy {
   min-height: 100%;
-  width: 45%;
+  width: 49%;
   background: white;
   display: flex;
   flex-direction: column;
@@ -26,8 +26,9 @@
 
 .profile__header {
   display: flex;
-  width: 70%;
+  width: 50%;
   margin: 0 auto;
+  margin-bottom: 5px;
   -webkit-box-pack: justify;
   justify-content: space-between;
   align-items: flex-end;
@@ -58,7 +59,7 @@
 
 .profile__safespace {
   min-height: 100%;
-  width: 45%;
+  width: 49%;
   background: white;
   display: flex;
   flex-direction: column;
