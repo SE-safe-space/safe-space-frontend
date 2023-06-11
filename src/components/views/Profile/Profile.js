@@ -82,7 +82,6 @@ const Profile = () => {
     <>
       <div className="content profile__header">
         <span>나의 공간</span>
-        <button>로그아웃</button>
       </div>
       <div className="profile">
         <div className="profile__privacy">

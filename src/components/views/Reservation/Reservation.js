@@ -285,7 +285,7 @@ const Reservation = () => {
             </div>
             <div className="commit_button">
               <div className="commit_button_wrapper">
-              <button type="submit" className="submit" onClick={checkForm}>제출</button>
+                <button type="submit" className="commit_button_element" onClick={checkForm}>제출</button>
               </div>
             </div>
           </div>

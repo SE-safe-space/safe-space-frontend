@@ -21,7 +21,7 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   padding: 15px 0px;
-  margin-bottom: 20px;
+  margin-top: 20px;
   font-weight: 500;
   color: rgba(0, 0, 0, 0.6);
 }
@@ -35,9 +35,23 @@
 }
 
 .login-form button {
-  border: none;
-  padding: 20px 0px;
-  background-color: #5cf0b294;
+  margin-top: 20px;
+  color: #ffffff;
+  width: 100%;
+  background-color: #12D783;
+  font-size: 15px;
+  border-style: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer
+}
+
+.login-form button:hover {
+  color: #12D783;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #12D783;
+  background-color: #ffffff;
 }
 
 .login-form a {
@@ -45,4 +59,9 @@
   text-decoration: none;
   font-size: 12px;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.rounded-md>div>p{
+  margin-top: 5px;
+  font-size: 12px;
 }

@@ -36,11 +36,25 @@ select {
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
 
-.signup-form button:last-of-type {
+.signup-form button {
   border: none;
   padding: 20px 0px;
-  background-color: #5cf0b294;
+  color: #ffffff;
+  background-color: #12D783;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer
 }
+
+.signup-form button:hover {
+  color: #12D783;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #12D783;
+  background-color: #ffffff;
+}
+
+
 
 .signup-form a {
   text-align: center;

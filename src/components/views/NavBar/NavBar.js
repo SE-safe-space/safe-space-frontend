@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
 import { IoLogoGithub } from 'react-icons/io'
 import { useNavigate } from 'react-router-dom'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faBars} from '@fortawesome/free-solid-svg-icons'
 
 function NavBar() {
   const accessToken = localStorage.getItem('accessToken');
@@ -35,6 +37,12 @@ function NavBar() {
     }
   }
 
+  // if click toggle button, show navbar__menu
+  const handleToggle = () => {
+    const navbar__menu = document.querySelector('.navbar__menu');
+    navbar__menu.classList.toggle('active');
+  }
+
   return (
     <>
       <div className="nav__wrap">
@@ -64,10 +72,9 @@ function NavBar() {
               </Link>
             </li>
           </div>
-          <div className="navbar__blank"></div>
-          <a href="javascript:void(0);" className="navbar__toggleBtn">
-            <i className="fa-solid fa-bars"></i>
-          </a>
+          <div className="navbar__toggleBtn" onClick={handleToggle}>
+            <FontAwesomeIcon icon={faBars} />
+          </div>
         </nav>
       </div>
     </>
