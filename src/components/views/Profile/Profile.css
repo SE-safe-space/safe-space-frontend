@@ -1,6 +1,7 @@
 .profile {
   display: flex;
   width: 50%;
+  min-width: 800px;
   padding: 5px 10px;
   margin: 0 auto;
   font-size: 14px;
@@ -18,7 +19,6 @@
   text-decoration: none;
   color: #444;
   position: relative;
-  z-index: -2;
   top: 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -27,6 +27,7 @@
 .profile__header {
   display: flex;
   width: 50%;
+  min-width: 800px;
   margin: 0 auto;
   margin-bottom: 5px;
   -webkit-box-pack: justify;
@@ -39,16 +40,18 @@
   justify-content: center;
   padding-top: 20px;
   width: 100px;
-  height: 100px;
 }
 .profile__privacy span {
   display: block;
   padding: 15px 0px;
 }
+.profile__privacy button {
+  margin-top: 5px;
+}
 
 .profile button {
   border: none;
-  width: 30%;
+  width: 40%;
 }
 
 .profile h1 {
