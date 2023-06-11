@@ -8,7 +8,7 @@ const Profile = () => {
   const [user, setUser] = useState([])
   const navigate = useNavigate()
   const accessToken = localStorage.getItem('accessToken');
-  
+
   const [picture, setPicture] = useState(null)
 
   const handlePictureChange = (e) => {
@@ -29,7 +29,7 @@ const Profile = () => {
       console.error('Error updating picture:', error.response.data);
     }
   };
-  
+
   /*const [password, setPassword] = useState('');
 
   const handleChangePassword = async (e) => {
@@ -87,7 +87,7 @@ const Profile = () => {
         <div className="profile__privacy">
           <h1>프로필</h1>
           <img className="profile__img" alt="profile_img" src={user.profileImage} />
-            <form onSubmit={handleSubmitPicture}>
+          <form onSubmit={handleSubmitPicture}>
             <label htmlFor="pictureInput">
               <input type="file" accept="image/*" id="pictureInput" onChange={handlePictureChange} />
             </label>
