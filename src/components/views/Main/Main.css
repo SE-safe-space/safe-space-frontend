@@ -10,6 +10,7 @@
     width: 100%;
 }
 
+
 .image_slider>.slick-slider>.slick-dots {
     bottom: 20px;
 }
@@ -21,10 +22,11 @@
 .main_board>.write_board {
     width: 100%;
     padding: 20px;
+    background-color: #fff;
 }
 
 .main_board>.write_board>.write_board_title {
-    margin-top: 30px;
+    margin-top: 50px;
     color: rgb(72, 72, 72);
     margin-bottom: 10px;
     display: flex;
@@ -49,7 +51,7 @@
     width: 70%;
     margin: 0 auto;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border: 3px solid #00CD75;
     border-radius: 15px;
     display: flex;
@@ -68,6 +70,8 @@
 .main_board>.recent_board_list {
     width: 100%;
     padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .main_board>.recent_board_list>.recent_board_list_title {
@@ -77,7 +81,7 @@
     margin: auto;
     margin-bottom: 10px;
     width: 65%;
-    min-width: 910px;
+    min-width: 1200px;
     color: rgb(72, 72, 72);
     font-size: 20px;
     font-weight: bold;
@@ -138,7 +142,7 @@
     color: rgb(72, 72, 72);
     margin-bottom: 20px;
     width: 100%;
-    line-height: 1.5;
+    line-height: 1.6;
     display: -ms-flexbox;
     display: box;
     display: -webkit-box;
@@ -156,9 +160,8 @@
 }
 
 .main_board>.counselor_board>.counselor_board_title {
-    margin-top: 30px;
     color: rgb(72, 72, 72);
-    margin-bottom: 30px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -166,30 +169,53 @@
     white-space: pre;
     font-weight: bold;
     font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 .main_board>.counselor_board>.counselor_board_content {
-    width: 70%;
+    width: 60%;
     margin: auto;
 }
 
 .main_board>.counselor_board>.counselor_board_content>ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
 }
 
 .main_board>.counselor_board>.counselor_board_content>ul>.counselor_item {
-    width: 20%;
-    min-width: 100px;
+    min-width: 170px;
     padding: 20px;
     margin: 10px;
     border: 2px solid #00CD75;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
     height: 200px;
     cursor: pointer;
 }
 
+.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>.item_title {
+    width: 100%;
+    height: 80%;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>.item_title>img {
+    width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>.item_content {
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(72, 72, 72);
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: center  ;
+    width: 100%;
+}
