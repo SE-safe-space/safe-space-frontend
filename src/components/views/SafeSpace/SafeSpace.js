@@ -77,7 +77,7 @@ const SafeSpace = () => {
     <section className="chat-body">
       <div className="chat-box">
         <header>
-          <h1>Chat</h1>
+          <h1>상담방</h1>
         </header>
         <section ref={messageListRef}>{renderMessages()}</section>
         <footer>

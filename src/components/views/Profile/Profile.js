@@ -127,14 +127,13 @@ const Profile = () => {
   }
 
   const handleOpenNewTab = (url) => {
-    window.open(url, '_blank', 'noopener, noreferrer, width=400, height=500')
+    window.open(url, '_blank', 'noopener, noreferrer, width=450, height=520')
   }
 
   return (
     <>
       <div className="content profile__header">
         <span>나의 공간</span>
-        <button>로그아웃</button>
       </div>
       <div className="profile">
         <div className="profile__privacy">
@@ -175,35 +174,38 @@ const Profile = () => {
         </div>
         <div className="profile__reservation">
           <h1>예약 정보</h1>
-          <ul>
-            <li>예약 리스트</li>
-            {reservationList.length > 0 ? (
-              <ul>
-                {reservationList.map((reservation) => (
-                  <li key={reservation.id}>
-                    {reservation.type}
-                    {reservation.text}
-                    {reservation.accept}
-                    {user.type === 'COUNSELOR' &&
-                      reservation.accept === 'WAIT' && (
-                        <button
-                          onClick={() =>
-                            handleAcceptReservation(
-                              reservation.memberId,
-                              reservation.counselorId,
-                            )
-                          }
-                        >
-                          예약 수락
-                        </button>
-                      )}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>예약이 없습니다.</p>
-            )}
-          </ul>
+          {reservationList.length > 0 ? (
+            <ul>
+              <li>
+                <span>타입</span>
+                <span>내용</span>
+                <span>예약상황</span>
+                <span></span>
+              </li>
+              {reservationList.map((reservation) => (
+                <li key={reservation.id}>
+                  <span>{reservation.type}</span>
+                  <span>{reservation.text}</span>
+                  <span>{reservation.accept}</span>
+                  <span>{user.type === 'COUNSELOR' &&
+                    reservation.accept === 'WAIT' && (
+                      <button
+                        onClick={() =>
+                          handleAcceptReservation(
+                            reservation.memberId,
+                            reservation.counselorId,
+                          )
+                        }
+                      >
+                        수락
+                      </button>
+                    )}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>예약이 없습니다.</p>
+          )}
         </div>
       </div>
     </>

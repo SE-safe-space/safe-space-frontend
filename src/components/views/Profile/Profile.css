@@ -47,12 +47,20 @@
   padding: 15px 0px;
 }
 .profile__privacy button {
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .profile button {
   border: none;
+  border-radius: 5px;
   width: 40%;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.profile button:hover {
+  background-color: #00cd75;
+  color: white;
 }
 
 .profile h1 {
@@ -69,7 +77,6 @@
   flex-direction: column;
   text-decoration: none;
   color: #444;
-
   top: 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -86,8 +93,52 @@
   flex-direction: column;
   text-decoration: none;
   color: #444;
-
   top: 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 20px;
+}
+
+
+.profile__reservation ul {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.profile__reservation li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.profile__reservation li:last-child {
+  border-bottom: none;
+}
+
+.profile__reservation li:first-child {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+
+.profile__reservation li span {
+  display: block;
+  text-align: center;
+  padding: 5px 0px;
+  width: 25%;
+}
+
+.profile__reservation li span:last-child {
+  display: block;
+  width: 10%;
+}
+
+.profile__reservation li button {
+  border: none;
+  width: 100%;
+  padding: 0px;
+  cursor: pointer;
 }

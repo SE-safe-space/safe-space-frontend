@@ -82,6 +82,13 @@ const Main = () => {
                                 <div className="item_content">
                                 </div>
                             </li>
+                            <li className="recent_item">
+                                <Link to={`/board/worry/id`} />
+                                <div className="item_title">
+                                </div>
+                                <div className="item_content">
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -94,11 +101,47 @@ const Main = () => {
                             <li className="counselor_item">
                                 <Link to={`/board/worry/id`} />
                                 <div className="item_title">
+                                    <img src="" alt="profile" />
+                                </div>
+                                <div className="item_content">
+                                    상담사 이름
+                                </div>
+                            </li>
+                            <li className="counselor_item">
+                                <Link to={`/board/worry/id`} />
+                                <div className="item_title">
                                     상담사 사진
                                 </div>
                                 <div className="item_content">
                                     상담사 이름
-                                   </div>
+                                </div>
+                            </li>
+                            <li className="counselor_item">
+                                <Link to={`/board/worry/id`} />
+                                <div className="item_title">
+                                    상담사 사진
+                                </div>
+                                <div className="item_content">
+                                    상담사 이름
+                                </div>
+                            </li>
+                            <li className="counselor_item">
+                                <Link to={`/board/worry/id`} />
+                                <div className="item_title">
+                                    상담사 사진
+                                </div>
+                                <div className="item_content">
+                                    상담사 이름
+                                </div>
+                            </li>
+                            <li className="counselor_item">
+                                <Link to={`/board/worry/id`} />
+                                <div className="item_title">
+                                    상담사 사진
+                                </div>
+                                <div className="item_content">
+                                    상담사
+                                </div>
                             </li>
                         </ul>
                     </div>

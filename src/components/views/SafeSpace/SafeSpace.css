@@ -35,7 +35,7 @@ br {
 }
 
 .chat-box header {
-  background-color: #45f;
+  background-color: #00cd75;
   color: #fff;
   display: flex;
   padding: 0 16px;
@@ -47,7 +47,8 @@ br {
 
 .chat-box header h1 {
   margin: 0;
-  font-size: 1.1em;
+  margin-top: 5px;
+  font-size: 1.05em;
 }
 
 .chat-box header .close-button {
@@ -80,7 +81,7 @@ br {
 }
 
 .chat-box section div.not-me span {
-  background-color: #68c;
+  background-color: #35B17C;
   border-radius: 4px 16px 16px 4px;
 }
 
@@ -97,7 +98,7 @@ br {
 }
 
 .chat-box section div.me span {
-  background-color: #bcf;
+  background-color: #AFF1D5;
   border-radius: 16px 4px 4px 16px;
 }
 
@@ -117,6 +118,7 @@ br {
   width: 100%;
   font-size: 1em;
 }
+
 
 .ch1 {
   flex: 1;
