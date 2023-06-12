@@ -8,40 +8,18 @@ const Profile = () => {
   const [user, setUser] = useState([])
   const navigate = useNavigate()
   const accessToken = localStorage.getItem('accessToken');
-
-  const [picture, setPicture] = useState(null)
-
-  const handlePictureChange = (e) => {
-    const selectedPicture = e.target.files[0];
-    setPicture(selectedPicture);
-  };
-
-  const handleSubmitPicture = async (e) => {
-    e.preventDefault();
-
-    try {
-      const formData = new FormData();
-      formData.append('picture', picture);
-
-      const response = await axios.patch('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/image', formData);
-      console.log('Picture updated successfully:', response.data);
-    } catch (error) {
-      console.error('Error updating picture:', error.response.data);
-    }
-  };
-
+  
   /*const [password, setPassword] = useState('');
 
   const handleChangePassword = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/update-password', { password });
+      const response = await axios.patch('https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/password', { password });
       console.log('Password updated successfully:', response.data);
     } catch (error) {
       console.error('Error updating password:', error.response.data);
     }
   };*/
-
 
   useEffect(() => {
     const FetchUserInfo = async () => {
@@ -74,6 +52,78 @@ const Profile = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const [picture, setPicture] = useState(null)
+
+  const handlePictureChange = (e) => {
+    const selectedPicture = e.target.files[0];
+    setPicture(selectedPicture);
+  };
+
+  const handleSubmitPicture = async (e) => {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData();
+      formData.append('id', user.id);
+      formData.append('file', picture);
+  
+      const response = await axios.patch(
+        'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/member/image',
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
+      console.log('Picture updated successfully:', response.data);
+      window.location.reload();
+    } catch (error) {
+      console.error('Error updating picture:', error.response.data);
+    }
+  };
+
+  const [reservationList, setReservationList] = useState([]);
+  
+  useEffect(() => {
+    const fetchReservations = async () => {
+      try {
+        let endpoint = '';
+  
+        const response = await axios.get(`https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/consult/${user.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            }
+          });
+        setReservationList(response.data);
+      } catch (error) {
+        console.error('Error fetching reservations:', error);
+      }
+    };
+  
+    fetchReservations();
+  }, [user]);
+
+  const handleAcceptReservation = async (memberId, counselorId) => {
+    try {
+      const response = await axios.post(
+        'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/consult/accept',
+        { memberId, counselorId },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+      console.log(response.data);
+      window.location.reload();
+    } catch (error) {
+      console.error('Error accepting reservation:', error);
+    }
+  };
+
   const handleOpenNewTab = (url) => {
     window.open(url, '_blank', 'noopener, noreferrer, width=400, height=500')
   }
@@ -82,12 +132,13 @@ const Profile = () => {
     <>
       <div className="content profile__header">
         <span>나의 공간</span>
+        <button>로그아웃</button>
       </div>
       <div className="profile">
         <div className="profile__privacy">
           <h1>프로필</h1>
           <img className="profile__img" alt="profile_img" src={user.profileImage} />
-          <form onSubmit={handleSubmitPicture}>
+            <form onSubmit={handleSubmitPicture}>
             <label htmlFor="pictureInput">
               <input type="file" accept="image/*" id="pictureInput" onChange={handlePictureChange} />
             </label>
@@ -115,6 +166,30 @@ const Profile = () => {
           <h1>예약 정보</h1>
           <ul>
             <li>예약 리스트</li>
+            {reservationList.length > 0 ? (
+              <ul>
+                {reservationList.map((reservation) => (
+                  <li key={reservation.id}>
+                    {reservation.type}
+                    {reservation.text}
+                    {reservation.accept}
+                    {user.type === 'COUNSELOR' && reservation.accept === 'WAIT' && (
+                <button
+                  onClick={() =>
+                    handleAcceptReservation(reservation.memberId, reservation.counselorId)
+                  }
+                >
+                  예약 수락
+                </button>
+              )}
+                
+                
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>예약이 없습니다.</p>
+      )}
           </ul>
         </div>
       </div>
