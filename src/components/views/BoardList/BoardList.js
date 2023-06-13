@@ -7,6 +7,7 @@ const BoardList = () => {
   const [boardList, setBoardList] = useState([])
   const navigate = useNavigate()
   const [noticeBoard, setNoticeBoard] = useState([])
+  const [check, setCheck] = useState(0)
 
   const getBoardList = async () => {
     const resp = await axios.get(
@@ -64,7 +65,11 @@ const BoardList = () => {
 
   useEffect(() => {
     getBoardList() // 1) 게시글 목록 조회 함수 호출
-  }, [])
+    console.log(boardList.length)
+    if (boardList.length == 0) {
+      setCheck(check + 1)
+    }
+  }, [check])
 
   return (
     <div className="content">
