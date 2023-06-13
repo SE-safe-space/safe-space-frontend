@@ -197,20 +197,21 @@
     cursor: pointer;
 }
 
-.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>.item_title {
+.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>a>.item_title {
     width: 100%;
     height: 80%;
     margin-bottom: 15px;
     overflow: hidden;
 }
 
-.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>.item_title>img {
+.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>a>.item_title>img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     vertical-align: middle;
 }
 
-.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>.item_content {
+.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>a>.item_content {
     font-size: 15px;
     font-weight: bold;
     color: rgb(72, 72, 72);
@@ -218,4 +219,8 @@
     margin-bottom: 20px;
     text-align: center  ;
     width: 100%;
+}
+
+.main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>a>.item_content>.counseling_type {
+font-size: smaller;
 }

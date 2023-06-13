@@ -8,6 +8,7 @@ const BoardList = () => {
   const navigate = useNavigate()
   const [noticeBoard, setNoticeBoard] = useState([])
   const [check, setCheck] = useState(0)
+
   const getBoardList = async () => {
     const resp = await axios.get(
       'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/view',
@@ -39,7 +40,7 @@ const BoardList = () => {
         boardList[i].writer,
         boardList[i].type,
         boardList[i].createdAt,
-        boardList[i].hide,
+        boardList[i].hide, 
       ]
       console.log(postData)
       const post = (
@@ -58,7 +59,7 @@ const BoardList = () => {
 
       posts.push(post)
     }
-
+    posts.reverse()
     setNoticeBoard(posts)
   }
 
