@@ -47,11 +47,11 @@
 .counselor_profile_header>.counselor_carrer {
     width: 50%;
     font-weight: lighter;
-    font-size: 14pt;
+    font-size: 15pt;
 }
 
 .counselor_carrer>.carrer_header {
-    margin-top: 5px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 

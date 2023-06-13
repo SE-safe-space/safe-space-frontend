@@ -35,7 +35,6 @@ const CounselorList = () => {
                 <div className="counseling_type">{counselor.counselingType}</div>
               </div>
           </li>
-          
         ))}
       </ul>
     </div>
