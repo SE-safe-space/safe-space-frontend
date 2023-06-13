@@ -116,41 +116,51 @@
     min-width: 300px;
     padding: 20px;
     margin: 10px;
-
     background-color: #fff;
     border-radius: 5px;
-    height: 200px;
+    height: 220px;
     cursor: pointer;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 }
 
-
-.main_board>.recent_board_list>.recent_board_list_content>ul>.recent_item>.item_title {
+.main_board>.recent_board_list>.recent_board_list_content>ul>.recent_item>a>.item_title {
     font-size: 15px;
     font-weight: bold;
     color: rgb(72, 72, 72);
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.main_board>.recent_board_list>.recent_board_list_content>ul>.recent_item>.item_content {
+.main_board>.recent_board_list>.recent_board_list_content>ul>.recent_item>a>.item_content {
     font-size: 13px;
     color: rgb(72, 72, 72);
-    margin-bottom: 20px;
     width: 100%;
+    margin-bottom: 10px;
     line-height: 1.6;
     display: -ms-flexbox;
     display: box;
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     word-break: break-all;
+}
+
+.main_board>.recent_board_list>.recent_board_list_content>ul>.recent_item>a>.item_footer {
+    font-size: 13px;
+    color: rgb(72, 72, 72);
+    padding-top: 5px;
+    margin-bottom: 20px;
+    border-top: 1px solid rgb(160, 160, 160);
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
 }
 
 .main_board>.counselor_board {
