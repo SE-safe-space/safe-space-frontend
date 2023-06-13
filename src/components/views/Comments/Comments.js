@@ -43,7 +43,7 @@ const Comments = ({boardId}) => {
 
   const submit = async () => {
 
-    if(user.type == "MEMBER") {
+    if(user.type == "MEMBER" || !user.type) {
       window.alert('상담사만 댓글을 작성할 수 있습니다.')
       return
     }
