@@ -22,7 +22,6 @@ const Main = () => {
             // Save response data in boardList variable
             setBoardList(data);
             boardList.reverse();
-            console.log(boardList);
         } catch (error) {
             console.error('Error fetching board data:', error);
         }

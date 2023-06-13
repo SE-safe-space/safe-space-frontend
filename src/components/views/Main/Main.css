@@ -1,6 +1,6 @@
 .page_wrapper {
     margin-top: 110px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     width: 100%;
     height: 100%;
     min-width: 900px;
@@ -181,21 +181,23 @@
 .main_board>.counselor_board>.counselor_board_content>ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 }
 
 .main_board>.counselor_board>.counselor_board_content>ul>.counselor_item {
     min-width: 170px;
+    width: 15%;
     padding: 20px;
-    margin: 10px;
+    margin: 20px;
     border: 2px solid #00CD75;
     background-color: #fff;
     border-radius: 15px;
-    height: 200px;
+    height: calc(width * 1.2);
     cursor: pointer;
 }
+
 
 .main_board>.counselor_board>.counselor_board_content>ul>.counselor_item>a>.item_title {
     width: 100%;
