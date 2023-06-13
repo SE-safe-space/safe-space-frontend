@@ -22,6 +22,7 @@ const Main = () => {
             // Save response data in boardList variable
             setBoardList(data);
             boardList.reverse();
+            console.log('Success fetching board data:', data);
         } catch (error) {
             console.error('Error fetching board data:', error);
         }
@@ -99,15 +100,22 @@ const Main = () => {
                     </div>
                     <div className="recent_board_list_content">
                         <ul>
-                            <li className="recent_item">
-                                <Link to={`/board/worry/id`} />
-                                <div className="item_title">
-                                    최근글 제목1
-                                </div>
-                                <div className="item_content">
-                                    최근글 내용dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                                </div>
-                            </li>
+                            {boardList.slice(0, 4).map((board) => (
+                                <li className="recent_item" key={board.id}>
+                                    <Link to={`/board/worry/${board.id}`}>
+                                        <div className="item_title">
+                                            {board.title}
+                                        </div>
+                                        <div className="item_content">
+                                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+                                        </div>
+                                        <div className="item_footer">
+                                            <div>{board.writer}</div>
+                                            <div>{board.type}</div>
+                                        </div>
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
