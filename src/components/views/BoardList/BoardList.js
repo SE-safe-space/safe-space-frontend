@@ -8,7 +8,6 @@ const BoardList = () => {
   const navigate = useNavigate()
   const [noticeBoard, setNoticeBoard] = useState([])
   const [check, setCheck] = useState(0)
-
   const getBoardList = async () => {
     const resp = await axios.get(
       'https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/view',
@@ -44,7 +43,11 @@ const BoardList = () => {
       ]
       console.log(postData)
       const post = (
-        <Link to={`/board/worry/id`} key={i} className="board_row data_row">
+        <Link
+          to={`/board/worry/${postData[0]}`}
+          key={i}
+          className="board_row data_row"
+        >
           {wrClass.map((className, j) => (
             <div key={j} className={className}>
               {postData[j]}
@@ -65,7 +68,6 @@ const BoardList = () => {
 
   useEffect(() => {
     getBoardList() // 1) 게시글 목록 조회 함수 호출
-    console.log(boardList.length)
     if (boardList.length == 0) {
       setCheck(check + 1)
     }
