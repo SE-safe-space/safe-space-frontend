@@ -5,11 +5,12 @@ import '../BoardWrite/BoardWrite.css'
 
 const BoardWrite = () => {
   const navigate = useNavigate()
-  const accessToken = localStorage.getItem('accessToken');
+  const accessToken = localStorage.getItem('accessToken')
   const [user, setUser] = useState([])
   const [text, setText] = useState('')
   const [title, setTitle] = useState('')
   const [type, setType] = useState('')
+  const [hide, setHide] = useState(false)
 
   useEffect(() => {
     const FetchUserInfo = async () => {
@@ -40,6 +41,9 @@ const BoardWrite = () => {
   }
 
   const saveBoard = async () => {
+    if (hide == true) {
+      board.writer = '익명'
+    }
     await axios
       .post(
         `https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/board/write`,
@@ -78,6 +82,10 @@ const BoardWrite = () => {
     setIsActive(false)
   }
 
+  const handleHide = () => {
+    setHide((current) => !current)
+  }
+
   return (
     <>
       <div className="content">
@@ -96,6 +104,7 @@ const BoardWrite = () => {
                 className="opt_input"
                 name="opt_input"
                 id="opt_input1"
+                onClick={handleHide}
               />
               <span className="opt_txt">닉네임 비공개</span>
             </label>
