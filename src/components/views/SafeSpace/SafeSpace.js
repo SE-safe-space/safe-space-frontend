@@ -5,7 +5,7 @@ import { current } from '@reduxjs/toolkit'
 
 const SafeSpace = () => {
   const [messages, setMessages] = useState([])
-  const [notify, setNotify] = useState(false)
+  const [notify, setNotify] = useState(0)
 
   const messageListRef = useRef(null)
   const chatRoomID = new URLSearchParams(window.location.search).get('data')
@@ -67,7 +67,7 @@ const SafeSpace = () => {
     }
 
     fetchMessage()
-    setNotify((current) => !current)
+    setNotify(notify + 1)
   }
 
   const handleKeyPress = (event) => {
@@ -78,6 +78,19 @@ const SafeSpace = () => {
   }
 
   const renderMessages = () => {
+    return messages.map((msg, idx) => {
+      const className = msg.senderId == userID ? 'me' : 'not-me'
+      return (
+        <>
+          <div key={idx} className={className}>
+            <span className="block" key={idx}>
+              {msg.text}
+            </span>
+          </div>
+        </>
+      )
+    })
+
     // return messages.map((messageGroup, index) => {
     //   const { itsMe, messages } = messageGroup
     //   const className = itsMe ? 'me' : 'not-me'
@@ -85,28 +98,28 @@ const SafeSpace = () => {
     //   // 이미지를 넣지 않더라도, 상담사의 이름만 들어가게 해도 괜찮을 것 같네요
     //   // 카톡 UI를 참고해서 본인 채팅은 그냥 보이고
     //   // 상담사만 보이도록 했습니다.
-    //   return (
-    //     <>
-    //       <div key={index} className={className}>
-    //         {messages.map((message, index) => (
-    //           <span className="block" key={index}>
-    //             {itsMe ? (
-    //               message
-    //             ) : (
-    //               <>
-    //                 <img
-    //                   className=".chat-box__img"
-    //                   src={message.image} // 경로 수정 필요, 백엔드에서 받아와야 함
-    //                   alt="Message Image"
-    //                 />
-    //                 {message}
-    //               </>
-    //             )}
-    //           </span>
-    //         ))}
-    //       </div>
-    //     </>
-    //   )
+    // return (
+    //   <>
+    //     <div key={index} className={className}>
+    //       {messages.map((message, index) => (
+    //         <span className="block" key={index}>
+    //           {itsMe ? (
+    //             message
+    //           ) : (
+    //             <>
+    //               <img
+    //                 className=".chat-box__img"
+    //                 src={message.image} // 경로 수정 필요, 백엔드에서 받아와야 함
+    //                 alt="Message Image"
+    //               />
+    //               {message}
+    //             </>
+    //           )}
+    //         </span>
+    //       ))}
+    //     </div>
+    //   </>
+    // )
     // })
   }
 
