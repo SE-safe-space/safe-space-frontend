@@ -89,37 +89,6 @@ const SafeSpace = () => {
         </>
       )
     })
-
-    // return messages.map((messageGroup, index) => {
-    //   const { itsMe, messages } = messageGroup
-    //   const className = itsMe ? 'me' : 'not-me'
-    //   // 시간 데이터도 불러와서 끝에 넣어주기
-    //   // 이미지를 넣지 않더라도, 상담사의 이름만 들어가게 해도 괜찮을 것 같네요
-    //   // 카톡 UI를 참고해서 본인 채팅은 그냥 보이고
-    //   // 상담사만 보이도록 했습니다.
-    // return (
-    //   <>
-    //     <div key={index} className={className}>
-    //       {messages.map((message, index) => (
-    //         <span className="block" key={index}>
-    //           {itsMe ? (
-    //             message
-    //           ) : (
-    //             <>
-    //               <img
-    //                 className=".chat-box__img"
-    //                 src={message.image} // 경로 수정 필요, 백엔드에서 받아와야 함
-    //                 alt="Message Image"
-    //               />
-    //               {message}
-    //             </>
-    //           )}
-    //         </span>
-    //       ))}
-    //     </div>
-    //   </>
-    // )
-    // })
   }
 
   return (
