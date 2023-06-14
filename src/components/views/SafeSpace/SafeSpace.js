@@ -26,14 +26,13 @@ const SafeSpace = () => {
             },
           },
         )
-        console.log(response.data)
         setMessages(response.data)
       } catch (error) {
         console.error('Error accepting chatRoom:', error)
       }
     }
     getChatData()
-  }, [notify])
+  }, [messages])
 
   // useEffect(() => {
   //   scrollToBottom()
