@@ -84,6 +84,31 @@ const Profile = () => {
     }
   }
 
+  const [chatRoomList, setchatRoomList] = useState([])
+
+  useEffect(() => {
+    const fetchChatRoom = async () => {
+      try {
+        let endpoint = ''
+
+        const response = await axios.get(
+          `https://port-0-safe-space-backend-otjl2cli2ssvyo.sel4.cloudtype.app/safe/chat/${user.id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${accessToken}`,
+            },
+          },
+        )
+        setchatRoomList(response.data)
+        console.log(chatRoomList)
+      } catch (error) {
+        console.error('Error fetching chatRoomList:', error)
+      }
+    }
+
+    fetchChatRoom()
+  }, [user])
+
   const [reservationList, setReservationList] = useState([])
 
   useEffect(() => {
@@ -126,8 +151,13 @@ const Profile = () => {
     }
   }
 
-  const handleOpenNewTab = (url) => {
-    window.open(url, '_blank', 'noopener, noreferrer, width=450, height=520')
+  const handleOpenNewTab = (url, chatRoomId, userId) => {
+    const chatRoom = window.open(
+      `${url}?data=` + chatRoomId + '&b=' + userId,
+      '_blank',
+      'noopener, noreferrer, width=450, height=520',
+    )
+    console.log(chatRoomId)
   }
 
   return (
@@ -162,14 +192,30 @@ const Profile = () => {
         </div>
         <div className="profile__safespace">
           <h1>상담방 정보</h1>
-          <ul>
-            <li>
-              <button onClick={() => handleOpenNewTab('/safespace')}>
-                상담방 링크
-              </button>
-            </li>
-            <li>상담방 링크2</li>
-          </ul>
+          {chatRoomList.length > 0 ? (
+            <ul>
+              {chatRoomList.map((chatRoom) => (
+                <li key={chatRoom.chatRoomId}>
+                  <span>{chatRoom.name}-- </span>
+                  <span>
+                    <button
+                      onClick={() =>
+                        handleOpenNewTab(
+                          '/safespace',
+                          chatRoom.chatRoomId,
+                          user.id,
+                        )
+                      }
+                    >
+                      입장하기
+                    </button>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>상담방이 없습니다.</p>
+          )}
         </div>
         <div className="profile__reservation">
           <h1>예약 정보</h1>
@@ -186,19 +232,21 @@ const Profile = () => {
                   <span>{reservation.type}</span>
                   <span>{reservation.text}</span>
                   <span>{reservation.accept}</span>
-                  <span>{user.type === 'COUNSELOR' &&
-                    reservation.accept === 'WAIT' && (
-                      <button
-                        onClick={() =>
-                          handleAcceptReservation(
-                            reservation.memberId,
-                            reservation.counselorId,
-                          )
-                        }
-                      >
-                        수락
-                      </button>
-                    )}</span>
+                  <span>
+                    {user.type === 'COUNSELOR' &&
+                      reservation.accept === 'WAIT' && (
+                        <button
+                          onClick={() =>
+                            handleAcceptReservation(
+                              reservation.memberId,
+                              reservation.counselorId,
+                            )
+                          }
+                        >
+                          수락
+                        </button>
+                      )}
+                  </span>
                 </li>
               ))}
             </ul>
