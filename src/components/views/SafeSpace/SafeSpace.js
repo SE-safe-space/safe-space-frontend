@@ -10,9 +10,6 @@ const SafeSpace = () => {
   const messageListRef = useRef(null)
   const chatRoomID = new URLSearchParams(window.location.search).get('data')
   const userID = new URLSearchParams(window.location.search).get('b')
-
-  // const userId = new URLSearchParams(window.location.search).get('userId')
-
   const accessToken = localStorage.getItem('accessToken')
 
   useEffect(() => {
@@ -33,10 +30,6 @@ const SafeSpace = () => {
     }
     getChatData()
   }, [messages])
-
-  // useEffect(() => {
-  //   scrollToBottom()
-  // }, [messages])
 
   const scrollToBottom = () => {
     messageListRef.current.scrollTop = messageListRef.current.scrollHeight
