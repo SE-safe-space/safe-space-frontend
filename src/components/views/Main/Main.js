@@ -103,15 +103,14 @@ const Main = () => {
                             {boardList.slice(0, 4).map((board) => (
                                 <li className="recent_item" key={board.id}>
                                     <Link to={`/board/worry/${board.id}`}>
-                                        <div className="item_title">
-                                            {board.title}
-                                        </div>
-                                        <div className="item_content">
-                                            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-                                        </div>
-                                        <div className="item_footer">
-                                            <div>{board.writer}</div>
-                                            <div>{board.type}</div>
+                                        <div>
+                                            <div className="item_title">
+                                                {board.title}
+                                            </div>
+                                            <div className="item_footer">
+                                                <div>{board.writer}</div>
+                                                <div>{board.type}</div>
+                                            </div>
                                         </div>
                                     </Link>
                                 </li>
